@@ -17,7 +17,6 @@
     --radius-lg:24px;
     --shadow:0 12px 28px rgba(0,0,0,.18);
     --shadow-soft:0 8px 18px rgba(0,0,0,.12);
-
     --maxw:1200px;
   }
   *{box-sizing:border-box}
@@ -85,7 +84,6 @@
     min-width:240px; height:110px; display:flex; align-items:center; justify-content:center;
     border-radius:18px; background:rgba(255,255,255,.92); color:#2b2b2b; font-weight:700; box-shadow:var(--shadow-soft)
   }
-
   .hero-cta{display:flex; gap:12px; justify-content:center; margin:22px 0 4px}
   .sub{opacity:.85; text-align:center; margin:6px 0 0}
 
@@ -102,12 +100,16 @@
     border-radius:var(--radius-lg); padding:18px; box-shadow:var(--shadow-soft);
     display:flex; flex-direction:column;
   }
+  /* ОБЩИЙ превью-блок: вернули прежние прямоугольники */
   .card .ph{
-    background:#e9edf2; color:#6c7486; border-radius:12px; 
-    display:flex; align-items:center; justify-content:center; font-weight:700;
-    /* квадрат 1:1 для фото/обложек */
-    aspect-ratio:1/1;
+    background:#e9edf2; color:#6c7486; border-radius:12px;
+    height:150px; display:flex; align-items:center; justify-content:center; font-weight:700;
   }
+  /* КВАДРАТ — только для фото менторов */
+  .card .ph-mentor{
+    height:auto; aspect-ratio:1/1; /* 1:1 */
+  }
+
   .card h3{margin:12px 0 6px}
   .muted{color:#5e667a; font-size:14px}
   .actions{margin-top:auto; display:flex; gap:10px; align-items:center}
@@ -269,25 +271,25 @@
       <h2 class="section-title">Менторы PrismaClub</h2>
       <div class="grid-4">
         <article class="card">
-          <div class="ph">Фото ментора 1×1</div>
+          <div class="ph ph-mentor">Фото ментора 1×1</div>
           <h3>Имя Фамилия — Unity</h3>
           <p class="muted">«Короткая фраза о подходе к обучению»</p>
           <div class="actions"><button class="btn">Подробнее</button></div>
         </article>
         <article class="card">
-          <div class="ph">Фото ментора 1×1</div>
+          <div class="ph ph-mentor">Фото ментора 1×1</div>
           <h3>Имя Фамилия — Python</h3>
           <p class="muted">«Короткая фраза о подходе к обучению»</p>
           <div class="actions"><button class="btn">Подробнее</button></div>
         </article>
         <article class="card">
-          <div class="ph">Фото ментора 1×1</div>
+          <div class="ph ph-mentor">Фото ментора 1×1</div>
           <h3>Имя Фамилия — Blender</h3>
           <p class="muted">«Короткая фраза о подходе к обучению»</p>
           <div class="actions"><button class="btn">Подробнее</button></div>
         </article>
         <article class="card">
-          <div class="ph">Фото ментора 1×1</div>
+          <div class="ph ph-mentor">Фото ментора 1×1</div>
           <h3>Имя Фамилия — Figma</h3>
           <p class="muted">«Короткая фраза о подходе к обучению»</p>
           <div class="actions"><button class="btn">Подробнее</button></div>
@@ -327,7 +329,7 @@
   <section id="cases">
     <div class="wrap">
       <h2 class="section-title">Кейсы проектов</h2>
-      <div class="grid-4">
+    <div class="grid-4">
         <article class="card">
           <div class="ph">Кейс #1 (картинка)</div>
           <h3>Пример проекта</h3>
@@ -422,7 +424,6 @@
           <textarea placeholder="Опиши, чего хочешь добиться (необязательно)"></textarea>
         </label>
 
-        <!-- Пиллы выбора направлений -->
         <div class="track-pills" role="group" aria-label="Выберите направления">
           <span class="pill" data-value="Unity">Unity</span>
           <span class="pill" data-value="Python">Python</span>
@@ -469,8 +470,7 @@
   const updateField = () => {
     const active = pills.filter(p=>p.classList.contains('active') && !p.hasAttribute('data-any'))
                         .map(p=>p.dataset.value);
-    if(anyPill.classList.contains('active')) { field.value = 'Не определился'; }
-    else { field.value = active.join(', '); }
+    field.value = anyPill.classList.contains('active') ? 'Не определился' : active.join(', ');
   };
 
   pills.forEach(p=>{
