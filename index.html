@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PrismaClub — клуб менторов</title>
+<style>
+  :root{
+    --accent:#ED5761;
+    --ink:#161515;
+    --slate:#404B62;
+    --white:#ffffff;
+
+    --grad-hero: linear-gradient(90deg, #2a2e36 0%, #141416 100%);
+    --grad-chip: linear-gradient(90deg, #ED5761 0%, #404B62 100%);
+    --radius:16px;
+    --radius-lg:24px;
+    --shadow:0 12px 28px rgba(0,0,0,.18);
+    --shadow-soft:0 8px 18px rgba(0,0,0,.12);
+
+    --maxw:1200px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:#f3f5f7; color:var(--ink);
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+    line-height:1.5;
+  }
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 20px}
+
+  /* header */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(255,255,255,.8);
+    backdrop-filter:saturate(150%) blur(8px);
+    border-bottom:1px solid rgba(0,0,0,.06);
+  }
+  .nav{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 0;}
+  .brand{display:flex; gap:10px; align-items:center}
+  .logo{
+    background:var(--grad-chip); color:#fff; font-weight:800; letter-spacing:.2px;
+    padding:8px 14px; border-radius:999px; box-shadow:var(--shadow-soft);
+  }
+  .tag{
+    color:#fff; font-weight:600; font-size:13px; padding:6px 10px;
+    border-radius:999px; background:var(--grad-chip);
+  }
+  .btn{
+    appearance:none; border:0; cursor:pointer;
+    background:var(--accent); color:#fff; font-weight:700;
+    padding:12px 18px; border-radius:12px; box-shadow:var(--shadow);
+    transition:transform .08s ease, filter .08s ease, box-shadow .2s ease;
+  }
+  .btn:hover{transform:translateY(-1px); filter:brightness(1.05)}
+  .btn.ghost{background:transparent; color:var(--accent); border:2px solid var(--accent); box-shadow:none}
+
+  /* hero */
+  .hero{padding:40px 0 24px}
+  .hero-card{
+    background:var(--grad-hero); color:#fff; border-radius:28px; padding:28px; box-shadow:var(--shadow);
+  }
+  .hero-title{margin:0 0 10px; font-size:38px}
+  .hero-row{display:flex; flex-wrap:wrap; gap:12px; align-items:center}
+  .chip{
+    background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.18);
+    padding:10px 14px; border-radius:999px; font-weight:600; color:#e9eef5;
+  }
+
+  /* marquee (icons) */
+  .marquee-shell{
+    margin-top:18px; position:relative; overflow:hidden;
+    border:1px solid rgba(255,255,255,.2); border-radius:22px; padding:14px;
+    background:linear-gradient(135deg, rgba(255,255,255,.18), rgba(255,255,255,.04));
+  }
+  .marquee{
+    display:flex; gap:16px; align-items:center;
+    will-change: transform; animation: slide 20s linear infinite;
+  }
+  .marquee:hover{animation-play-state:paused}
+  @keyframes slide{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+  .fade-left,.fade-right{position:absolute; top:0; bottom:0; width:80px; pointer-events:none}
+  .fade-left{left:0; background:linear-gradient(90deg, rgba(0,0,0,.35), rgba(0,0,0,0))}
+  .fade-right{right:0; background:linear-gradient(270deg, rgba(0,0,0,.35), rgba(0,0,0,0))}
+  .icon-card{
+    min-width:240px; height:110px; display:flex; align-items:center; justify-content:center;
+    border-radius:18px; background:rgba(255,255,255,.92); color:#2b2b2b; font-weight:700; box-shadow:var(--shadow-soft)
+  }
+
+  .hero-cta{display:flex; gap:12px; justify-content:center; margin:22px 0 4px}
+  .sub{opacity:.85; text-align:center; margin:6px 0 0}
+
+  /* sections */
+  section{padding:44px 0}
+  .section-title{font-size:28px; margin:0 0 18px}
+
+  .grid-4{display:grid; grid-template-columns:repeat(4,1fr); gap:18px}
+  .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+  .grid-2{display:grid; grid-template-columns:repeat(2,1fr); gap:18px}
+
+  .card{
+    background:#fff; border:1px solid rgba(0,0,0,.06);
+    border-radius:var(--radius-lg); padding:18px; box-shadow:var(--shadow-soft);
+    display:flex; flex-direction:column;
+  }
+  .card .ph{
+    background:#e9edf2; color:#6c7486; border-radius:12px; 
+    display:flex; align-items:center; justify-content:center; font-weight:700;
+    /* квадрат 1:1 для фото/обложек */
+    aspect-ratio:1/1;
+  }
+  .card h3{margin:12px 0 6px}
+  .muted{color:#5e667a; font-size:14px}
+  .actions{margin-top:auto; display:flex; gap:10px; align-items:center}
+
+  /* steps */
+  .steps{display:grid; grid-template-columns:repeat(4,1fr); gap:16px}
+  .step{background:#fff; border:1px solid rgba(0,0,0,.06); border-radius:16px; padding:16px}
+  .step .num{font-weight:900; color:var(--accent); font-size:20px}
+
+  /* pricing */
+  .pricing .grid-3 > .card{min-height:320px}
+  .pricing .price{font-size:32px; font-weight:900; margin:8px 0 2px}
+  .subprice{font-weight:700; margin:-2px 0 6px}
+  .save{color:#1c7c3c; font-weight:700; margin:2px 0 10px}
+
+  /* FAQ */
+  .faq-item{background:#fff; border:1px solid rgba(0,0,0,.06); border-radius:14px; padding:14px}
+  .faq-q{display:flex; justify-content:space-between; align-items:center; cursor:pointer; font-weight:700}
+  .faq-a{display:none; margin-top:8px; color:#515969}
+
+  /* form + toggle buttons */
+  .form{display:grid; gap:12px}
+  label small{color:#8a92a6}
+  input, textarea{
+    width:100%; padding:14px 16px; border-radius:12px; border:1px solid rgba(0,0,0,.12);
+    background:#fff; font-size:16px;
+  }
+  input[required] {border-color: rgba(0,0,0,.18)}
+  textarea{min-height:130px; resize:vertical}
+  .track-pills{display:flex; flex-wrap:wrap; gap:10px; margin-top:4px}
+  .pill{
+    border:1.5px solid rgba(64,75,98,.35); color:var(--ink);
+    background:#fff; border-radius:999px; padding:10px 14px; cursor:pointer; user-select:none;
+    font-weight:700; box-shadow:0 2px 6px rgba(0,0,0,.05);
+    transition:all .15s ease;
+  }
+  .pill:hover{transform:translateY(-1px)}
+  .pill.active{background:var(--accent); color:#fff; border-color:transparent; box-shadow:0 8px 18px rgba(237,87,97,.35)}
+
+  /* footer */
+  footer{padding:32px 0; color:#e4e7eb; background:linear-gradient(90deg, #2b2f3a, #161515)}
+  footer .wrap{display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between}
+
+  /* responsive */
+  @media (max-width:1180px){ .grid-4{grid-template-columns:repeat(2,1fr)} .steps{grid-template-columns:repeat(2,1fr)} .pricing .grid-3>.card{min-height:auto} }
+  @media (max-width:640px){
+    .grid-3,.grid-2,.grid-4{grid-template-columns:1fr}
+    .hero-card{padding:20px}
+    .hero-cta{flex-direction:column}
+    .icon-card{min-width:200px}
+    .fade-left,.fade-right{display:none}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <div class="logo">PrismaClub</div>
+      <div class="tag">клуб менторов → Unity • Blender • Python • Figma • Photoshop</div>
+    </div>
+    <button class="btn" onclick="smoothTo('#form')">Записаться</button>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-card">
+        <h1 class="hero-title">Индивидуальные менторы и мини-группы</h1>
+        <div class="hero-row">
+          <div class="chip">Проектная работа: Unity • Blender • Python • Figma • Photoshop</div>
+          <div class="chip">Пошаговый трек под твою цель</div>
+        </div>
+
+        <!-- marquee -->
+        <div class="marquee-shell" aria-label="направления">
+          <div class="fade-left"></div><div class="fade-right"></div>
+          <div class="marquee">
+            <div class="icon-card">Иконка Unity</div>
+            <div class="icon-card">Иконка Blender</div>
+            <div class="icon-card">Иконка Python</div>
+            <div class="icon-card">Иконка Figma</div>
+            <div class="icon-card">Иконка Photoshop</div>
+            <div class="icon-card">Иконка Blender</div>
+            <div class="icon-card">Иконка Unity</div>
+            <div class="icon-card">Иконка Figma</div>
+            <div class="icon-card">Иконка Python</div>
+            <div class="icon-card">Иконка Photoshop</div>
+          </div>
+        </div>
+
+        <div class="hero-cta">
+          <button class="btn" onclick="smoothTo('#mentors')">Подобрать ментора</button>
+          <button class="btn ghost" onclick="smoothTo('#cases')">Смотреть проекты</button>
+        </div>
+        <p class="sub">Уже N проектов выпущено • Средний срок: 6–8 недель</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEPS -->
+  <section>
+    <div class="wrap">
+      <h2 class="section-title">Как мы работаем</h2>
+      <div class="steps">
+        <div class="step"><div class="num">01</div><h3>Диагностика 20 мин</h3><p class="muted">Понимаем цель и опыт. Помогаем выбрать трек.</p></div>
+        <div class="step"><div class="num">02</div><h3>Подбор ментора</h3><p class="muted">Смотрим стиль, стек и расписание, согласуем старт.</p></div>
+        <div class="step"><div class="num">03</div><h3>Совместные созвоны</h3><p class="muted">Еженедельные практические мастерские: шэр экрана, ревью, конкретные правки.</p></div>
+        <div class="step"><div class="num">04</div><h3>Показ результата</h3><p class="muted">Финальный показ и следующий шаг развития.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRACKS -->
+  <section id="tracks">
+    <div class="wrap">
+      <h2 class="section-title">Треки PrismaClub</h2>
+      <div class="grid-3">
+        <article class="card">
+          <div class="ph">Превью трека Unity</div>
+          <h3>Unity — играбельный прототип</h3>
+          <p class="muted">Соберёшь прототип (меню, управление, базовая логика) за 6–8 недель.</p>
+          <div class="actions"><button class="btn">План трека</button></div>
+        </article>
+        <article class="card">
+          <div class="ph">Превью трека Blender</div>
+          <h3>Blender — сцена и рендер</h3>
+          <p class="muted">Моделинг, свет, материалы, камера, финальный рендер.</p>
+          <div class="actions"><button class="btn">План трека</button></div>
+        </article>
+        <article class="card">
+          <div class="ph">Превью трека Python</div>
+          <h3>Python — мини-приложение</h3>
+          <p class="muted">CLI/бот/скрипт автоматизации. Git и структура проекта.</p>
+          <div class="actions"><button class="btn">План трека</button></div>
+        </article>
+        <article class="card">
+          <div class="ph">Превью трека Figma</div>
+          <h3>Figma — UI-концепт</h3>
+          <p class="muted">Сетка, компоненты, интерактивный прототип, презентация.</p>
+          <div class="actions"><button class="btn">План трека</button></div>
+        </article>
+        <article class="card">
+          <div class="ph">Превью трека Photoshop</div>
+          <h3>Photoshop — постер/обложка</h3>
+          <p class="muted">Композиция, цвет, ретушь, экспорт для веб/печати.</p>
+          <div class="actions"><button class="btn">План трека</button></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENTORS -->
+  <section id="mentors">
+    <div class="wrap">
+      <h2 class="section-title">Менторы PrismaClub</h2>
+      <div class="grid-4">
+        <article class="card">
+          <div class="ph">Фото ментора 1×1</div>
+          <h3>Имя Фамилия — Unity</h3>
+          <p class="muted">«Короткая фраза о подходе к обучению»</p>
+          <div class="actions"><button class="btn">Подробнее</button></div>
+        </article>
+        <article class="card">
+          <div class="ph">Фото ментора 1×1</div>
+          <h3>Имя Фамилия — Python</h3>
+          <p class="muted">«Короткая фраза о подходе к обучению»</p>
+          <div class="actions"><button class="btn">Подробнее</button></div>
+        </article>
+        <article class="card">
+          <div class="ph">Фото ментора 1×1</div>
+          <h3>Имя Фамилия — Blender</h3>
+          <p class="muted">«Короткая фраза о подходе к обучению»</p>
+          <div class="actions"><button class="btn">Подробнее</button></div>
+        </article>
+        <article class="card">
+          <div class="ph">Фото ментора 1×1</div>
+          <h3>Имя Фамилия — Figma</h3>
+          <p class="muted">«Короткая фраза о подходе к обучению»</p>
+          <div class="actions"><button class="btn">Подробнее</button></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMUNITY -->
+  <section>
+    <div class="wrap">
+      <h2 class="section-title">Практики и встречи клуба</h2>
+      <div class="grid-3">
+        <div class="card">
+          <div class="ph">Обложка «Открытые часы»</div>
+          <h3>Открытые часы — бесплатно</h3>
+          <p class="muted">Знакомство и Q&A, 30–45 мин раз в неделю. Для новичков и родителей.</p>
+          <div class="actions"><button class="btn">Получить ссылку</button></div>
+        </div>
+        <div class="card">
+          <div class="ph">Обложка «Мастерская»</div>
+          <h3>Практическая мастерская — для учеников</h3>
+          <p class="muted">90-мин еженедельная работа над проектом: шэр экрана, ревью, правки.</p>
+          <div class="actions"><button class="btn">Записаться в трек</button></div>
+        </div>
+        <div class="card">
+          <div class="ph">Обложка «Демо-ночь»</div>
+          <h3>Демо-ночь — раз в месяц</h3>
+          <p class="muted">Короткие показы результатов, вопросы и поиск напарников.</p>
+          <div class="actions"><button class="btn">Стать гостем</button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASES -->
+  <section id="cases">
+    <div class="wrap">
+      <h2 class="section-title">Кейсы проектов</h2>
+      <div class="grid-4">
+        <article class="card">
+          <div class="ph">Кейс #1 (картинка)</div>
+          <h3>Пример проекта</h3>
+          <p class="muted">«Что сделал» • «за сколько недель» • 1 инсайт.</p>
+        </article>
+        <article class="card">
+          <div class="ph">Кейс #2 (картинка)</div>
+          <h3>Пример проекта</h3>
+          <p class="muted">«Что сделал» • «за сколько недель» • 1 инсайт.</p>
+        </article>
+        <article class="card">
+          <div class="ph">Кейс #3 (картинка)</div>
+          <h3>Пример проекта</h3>
+          <p class="muted">«Что сделал» • «за сколько недель» • 1 инсайт.</p>
+        </article>
+        <article class="card">
+          <div class="ph">Кейс #4 (картинка)</div>
+          <h3>Пример проекта</h3>
+          <p class="muted">«Что сделал» • «за сколько недель» • 1 инсайт.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing">
+    <div class="wrap">
+      <h2 class="section-title">Форматы и цены</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3>1-на-1</h3>
+          <div class="price">1250 ₽ / час</div>
+          <p class="muted subprice">Абонемент 4 занятия</p>
+          <p class="muted">Разовая оплата: <b>1500 ₽</b></p>
+          <p class="save">Абонемент выгоднее на ~17%</p>
+          <div class="actions"><button class="btn">Записаться</button></div>
+        </div>
+        <div class="card">
+          <h3>Мини-группа 3–5</h3>
+          <div class="price">800 ₽ / занятие</div>
+          <p class="muted subprice">Абонемент 4 занятия</p>
+          <p class="muted">Разовая оплата: <b>1000 ₽</b></p>
+          <p class="save">Абонемент выгоднее на ~20%</p>
+          <div class="actions"><button class="btn">Записаться</button></div>
+        </div>
+        <div class="card">
+          <h3>Гостевой пропуск</h3>
+          <div class="price">Бесплатно</div>
+          <p class="muted">Открытые часы: знакомство и Q&A. Реши, с чего начать.</p>
+          <div class="actions"><button class="btn">Получить пропуск</button></div>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:10px">Оплата напрямую ментору (самозанятый). Чеки предоставляются.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <div class="wrap">
+      <h2 class="section-title">Вопросы и ответы</h2>
+      <div class="faq">
+        <div class="faq-item">
+          <div class="faq-q">Что такое открытые часы, мастерская и демо-ночь? Это бесплатно? <span>+</span></div>
+          <div class="faq-a">
+            <p><b>Открытые часы</b> — бесплатные 30–45-минутные встречи раз в неделю для всех (и родителей). Это знакомство с форматом и Q&A, а не полноценный урок.</p>
+            <p><b>Практическая мастерская</b> — еженедельные 90 минут для действующих учеников: показываем прогресс, шэр экрана, ревью и конкретные правки. Входит в обучение.</p>
+            <p><b>Демо-ночь</b> — открытое событие раз в месяц: короткие показы результатов, вопросы из чата, можно присоединиться гостем.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Можно без опыта? <span>+</span></div>
+          <div class="faq-a">Да. Начинаем с диагностики, выбираем трек и темп. Цель — выпустить первый завершённый проект.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Как записаться и кто проводит занятия? <span>+</span></div>
+          <div class="faq-a">Оставляете контакты — ментор связывается, согласует формат (1-на-1 или мини-группа) и старт.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="form">
+    <div class="wrap">
+      <h2 class="section-title">Диагностика 20 минут</h2>
+      <p class="muted">Оставь контакты — подберём трек и ментора. <b>* — обязательные поля</b></p>
+      <form class="form" onsubmit="event.preventDefault(); alert('Спасибо! Мы свяжемся с вами.');" novalidate>
+        <label>Имя*<br><input type="text" placeholder="Имя" required aria-required="true" /></label>
+        <label>Email*<br><input type="email" placeholder="Email" required aria-required="true" /></label>
+        <label>Телефон*<br><input type="tel" placeholder="Телефон" required aria-required="true" /></label>
+        <label>Цель (игра / 3D-сцена / UI-концепт / скрипт на Python)…<br>
+          <textarea placeholder="Опиши, чего хочешь добиться (необязательно)"></textarea>
+        </label>
+
+        <!-- Пиллы выбора направлений -->
+        <div class="track-pills" role="group" aria-label="Выберите направления">
+          <span class="pill" data-value="Unity">Unity</span>
+          <span class="pill" data-value="Python">Python</span>
+          <span class="pill" data-value="Blender">Blender</span>
+          <span class="pill" data-value="Figma">Figma</span>
+          <span class="pill" data-value="Photoshop">Photoshop</span>
+          <span class="pill" data-value="Не определился" data-any>Не определился</span>
+        </div>
+        <p class="muted">Можно выбрать несколько направлений. Если не уверен — нажми «Не определился».</p>
+
+        <input type="hidden" name="tracks" id="tracksField" value="">
+        <button class="btn" style="width:100%">Отправить</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div style="color:#fff; font-weight:800">PrismaClub</div>
+    <div style="opacity:.8">© 2025 • Объединение самозанятых менторов. Мы объединяем профессионалов, а не формальности.</div>
+  </div>
+</footer>
+
+<script>
+  // плавный скролл к якорям
+  function smoothTo(sel){ document.querySelector(sel)?.scrollIntoView({behavior:'smooth', block:'start'}); }
+
+  // FAQ
+  document.querySelectorAll('.faq-q').forEach(q=>{
+    q.addEventListener('click',()=>{
+      const a=q.nextElementSibling; const opened=a.style.display==='block';
+      document.querySelectorAll('.faq-a').forEach(el=>el.style.display='none');
+      a.style.display= opened? 'none':'block';
+    });
+  });
+
+  // Пиллы выбора направлений
+  const pills = Array.from(document.querySelectorAll('.pill'));
+  const anyPill = pills.find(p=>p.hasAttribute('data-any'));
+  const field = document.getElementById('tracksField');
+
+  const updateField = () => {
+    const active = pills.filter(p=>p.classList.contains('active') && !p.hasAttribute('data-any'))
+                        .map(p=>p.dataset.value);
+    if(anyPill.classList.contains('active')) { field.value = 'Не определился'; }
+    else { field.value = active.join(', '); }
+  };
+
+  pills.forEach(p=>{
+    p.setAttribute('tabindex', '0');
+    const toggle = () => {
+      if(p.hasAttribute('data-any')){
+        pills.forEach(x=>{ if(x!==p) x.classList.remove('active'); });
+        p.classList.toggle('active');
+      } else {
+        anyPill.classList.remove('active');
+        p.classList.toggle('active');
+      }
+      updateField();
+    };
+    p.addEventListener('click', toggle);
+    p.addEventListener('keydown', e=>{ if(e.key===' '||e.key==='Enter'){ e.preventDefault(); toggle(); } });
+  });
+</script>
+</body>
+</html>
