@@ -1,17 +1,16 @@
 <!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>PrismaClub — Менторы</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PrismaClub — Наставники</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 <header>
   <div class="wrap nav">
     <div class="brand">
       <a class="logo" href="index.html">PrismaClub</a>
-      <div class="tag">клуб менторов</div>
     </div>
     <nav class="topnav">
       <a class="navlink" href="index.html">Главная</a>
@@ -26,51 +25,56 @@
   <section class="hero slim">
     <div class="wrap">
       <div class="hero-card">
-        <h1 class="hero-title">Команда менторов</h1>
-        <p class="sub">Выберите направление — вкладка «поднимется», а ниже раскроются менторы.</p>
+        <h1 class="hero-title">Наши наставники</h1>
+        <p class="sub">Подбираем наставника под интерес ребёнка. Понятно объясняем, показываем прогресс и бережно поддерживаем мотивацию.</p>
       </div>
     </div>
   </section>
 
-  <section>
+  <section id="unity">
     <div class="wrap">
-      <div class="tabs" data-tabs="mentors">
-        <button class="tab active" data-target="unity">Unity</button>
-        <button class="tab" data-target="python">Python</button>
-        <button class="tab" data-target="blender">Blender</button>
-        <button class="tab" data-target="figma">Figma</button>
-        <button class="tab" data-target="photoshop">Photoshop</button>
+      <h2 class="section-title">Unity</h2>
+      <div class="grid-4">
+        <article class="card">
+          <div class="ph ph-mentor">Фото 1×1</div>
+          <h3>Имя Фамилия</h3>
+          <p class="muted">Экспертиза: Unity, C#, 2D-игры. Опыт 3+ года.</p>
+          <div class="actions"><a class="btn" href="index.html#form">Записаться</a></div>
+        </article>
+        <article class="card">
+          <div class="ph ph-mentor">Фото 1×1</div>
+          <h3>Имя Фамилия</h3>
+          <p class="muted">Экспертиза: Level Design, UI. Спокойная подача.</p>
+          <div class="actions"><a class="btn" href="index.html#form">Записаться</a></div>
+        </article>
       </div>
+    </div>
+  </section>
 
-      <div class="tab-body active" id="unity">
-        <div class="grid-4 dark-panel">
-          <article class="card glass"><div class="ph ph-mentor">Фото 1×1</div><h3>Имя</h3><p class="muted">Опыт/подход.</p><div class="actions"><a class="btn" href="index.html#form">Записаться</a></div></article>
-          <article class="card glass"><div class="ph ph-mentor">Фото 1×1</div><h3>Имя</h3><p class="muted">Опыт/подход.</p><div class="actions"><a class="btn" href="index.html#form">Записаться</a></div></article>
-        </div>
+  <section id="python">
+    <div class="wrap">
+      <h2 class="section-title">Python</h2>
+      <div class="grid-4">
+        <article class="card">
+          <div class="ph ph-mentor">Фото 1×1</div>
+          <h3>Имя Фамилия</h3>
+          <p class="muted">Экспертиза: основы Python, мини-игры/боты. Опыт 4+ года.</p>
+          <div class="actions"><a class="btn" href="index.html#form">Записаться</a></div>
+        </article>
       </div>
+    </div>
+  </section>
 
-      <div class="tab-body" id="python">
-        <div class="grid-4 dark-panel">
-          <article class="card glass"><div class="ph ph-mentor">Фото 1×1</div><h3>Имя</h3><p class="muted">Опыт/подход.</p><div class="actions"><a class="btn" href="index.html#form">Записаться</a></div></article>
-        </div>
-      </div>
-
-      <div class="tab-body" id="blender">
-        <div class="grid-4 dark-panel">
-          <article class="card glass"><div class="ph ph-mentor">Фото 1×1</div><h3>Имя</h3><p class="muted">Опыт/подход.</p><div class="actions"><a class="btn" href="index.html#form">Записаться</a></div></article>
-        </div>
-      </div>
-
-      <div class="tab-body" id="figma">
-        <div class="grid-4 dark-panel">
-          <article class="card glass"><div class="ph ph-mentor">Фото 1×1</div><h3>Имя</h3><p class="muted">Опыт/подход.</p><div class="actions"><a class="btn" href="index.html#form">Записаться</a></div></article>
-        </div>
-      </div>
-
-      <div class="tab-body" id="photoshop">
-        <div class="grid-4 dark-panel">
-          <article class="card glass"><div class="ph ph-mentor">Фото 1×1</div><h3>Имя</h3><p class="muted">Опыт/подход.</p><div class="actions"><a class="btn" href="index.html#form">Записаться</a></div></article>
-        </div>
+  <section id="blender">
+    <div class="wrap">
+      <h2 class="section-title">Blender</h2>
+      <div class="grid-4">
+        <article class="card">
+          <div class="ph ph-mentor">Фото 1×1</div>
+          <h3>Имя Фамилия</h3>
+          <p class="muted">Экспертиза: моделирование, материалы, рендер. Опыт 5+ лет.</p>
+          <div class="actions"><a class="btn" href="index.html#form">Записаться</a></div>
+        </article>
       </div>
     </div>
   </section>
@@ -78,7 +82,7 @@
 
 <footer>
   <div class="wrap">
-    <div style="color:#fff;font-weight:800">PrismaClub</div>
+    <div style="color:#fff; font-weight:800">PrismaClub</div>
     <div style="opacity:.8">© 2025 • Объединение самозанятых менторов.</div>
   </div>
 </footer>
