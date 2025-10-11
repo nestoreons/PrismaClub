@@ -1,54 +1,73 @@
-// плавный скролл к якорям
-function smoothTo(sel){ document.querySelector(sel)?.scrollIntoView({behavior:'smooth', block:'start'}); }
+// плавный скролл
+function smoothTo(sel){ document.querySelector(sel)?.scrollIntoView({behavior:'smooth'}); }
 
-// FAQ аккордеон
+// FAQ
 document.querySelectorAll('.faq-q').forEach(q=>{
   q.addEventListener('click',()=>{
-    const a=q.nextElementSibling; const opened=a.style.display==='block';
-    document.querySelectorAll('.faq-a').forEach(el=>el.style.display='none');
-    a.style.display= opened? 'none':'block';
+    const a=q.nextElementSibling;
+    const open=a.style.display==='block';
+    document.querySelectorAll('.faq-a').forEach(x=>x.style.display='none');
+    a.style.display=open?'none':'block';
   });
 });
 
-// Пиллы выбора направлений
-const pills = Array.from(document.querySelectorAll('.pill'));
-const anyPill = pills.find(p=>p.hasAttribute('data-any'));
-const field = document.getElementById('tracksField');
+// Пиллы направлений в форме
+const pills=[...document.querySelectorAll('.pill')];
+const any=pills.find(p=>p.hasAttribute('data-any'));
+const field=document.getElementById('tracksField');
 
 function updateField(){
   if(!field) return;
-  const active = pills.filter(p=>p.classList.contains('active') && !p.hasAttribute('data-any'))
-                      .map(p=>p.dataset.value);
-  field.value = anyPill && anyPill.classList.contains('active') ? 'Не определился' : active.join(', ');
+  const active=pills
+    .filter(p=>p.classList.contains('active') && !p.hasAttribute('data-any'))
+    .map(p=>p.dataset.value);
+  field.value = (any && any.classList.contains('active')) ? 'Не определился' : active.join(', ');
 }
 
 pills.forEach(p=>{
-  p.setAttribute('tabindex','0');
-  const toggle = () => {
+  const toggle=()=>{
     if(p.hasAttribute('data-any')){
       pills.forEach(x=>{ if(x!==p) x.classList.remove('active'); });
       p.classList.toggle('active');
-    } else {
-      anyPill?.classList.remove('active');
+    }else{
+      any?.classList.remove('active');
       p.classList.toggle('active');
     }
-    // доступность
-    p.setAttribute('aria-pressed', p.classList.contains('active') ? 'true' : 'false');
+    p.setAttribute('aria-pressed', p.classList.contains('active')?'true':'false');
     updateField();
   };
-  p.addEventListener('click', toggle);
-  p.addEventListener('keydown', e=>{ if(e.key===' '||e.key==='Enter'){ e.preventDefault(); toggle(); } });
+  p.addEventListener('click',toggle);
+  p.addEventListener('keydown',e=>{ if(e.key===' '||e.key==='Enter'){e.preventDefault();toggle();}});
+  p.setAttribute('tabindex','0');
 });
 
-// Спасибо-экран формы
+// Спасибо-уведомление формы
 function showThanks(){
-  const el = document.getElementById('thanks');
-  if(el){ el.hidden = false; }
+  const t=document.getElementById('thanks');
+  if(t){ t.hidden=false; t.scrollIntoView({behavior:'smooth', block:'center'}); }
 }
+window.showThanks=showThanks;
 
-// Уважение prefers-reduced-motion (если надо — остановить маркизу)
-const mediaReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-if(mediaReduced.matches){
-  const mq = document.querySelector('.marquee');
-  if(mq) mq.style.animation = 'none';
+// Табы (менторы и курсы)
+document.querySelectorAll('.tabs').forEach(group=>{
+  const targetName=group.dataset.tabs; // только пометка
+  const tabs=[...group.querySelectorAll('.tab')];
+  tabs.forEach(tab=>{
+    tab.addEventListener('click',()=>{
+      tabs.forEach(t=>t.classList.remove('active'));
+      tab.classList.add('active');
+      const id=tab.dataset.target;
+      // тело
+      const bodies=group.parentElement.querySelectorAll('.tab-body');
+      bodies.forEach(b=>b.classList.remove('active'));
+      const active = group.parentElement.querySelector('#'+id);
+      active?.classList.add('active');
+      active?.scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  });
+});
+
+// reduce motion — остановка фоновой анимации в hero
+if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  document.querySelectorAll('.blob,.capsule,.dot').forEach(el=>el.style.animation='none');
 }
