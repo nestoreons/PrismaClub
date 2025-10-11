@@ -14,7 +14,7 @@
       <a class="logo" href="index.html">PrismaClub</a>
     </div>
     <nav class="topnav">
-      <a class="navlink active" href="#hero">Главная</a>
+      <a class="navlink" href="#hero">Главная</a>
       <a class="navlink" href="#tracks">Направления</a>
       <a class="navlink" href="#mentors">Наставники</a>
       <a class="navlink" href="#cases">Кейсы</a>
@@ -31,18 +31,24 @@
     <div class="wrap">
       <div class="hero-card">
         <div class="hero-content">
-          <h1 class="hero-title">Развивайте таланты вашего ребёнка в программировании: от новичка до первого проекта</h1>
-          <p class="hero-sub">Вашему ребёнку 12-17 лет? Мы поможем освоить востребованные навыки в Unity, Blender, Python, Figma и Photoshop через индивидуальные занятия или мини-группы с опытными наставниками. Первый результат — через 6-8 недель!</p>
+          <h1 class="hero-title">Развивайте таланты вашего ребёнка в программировании</h1>
+          <p class="hero-sub">Для подростков 12-17 лет: навыки Unity, Blender, Python, Figma, Photoshop.</p>
+          <ul class="hero-list">
+            <li>Индивидуально или в мини-группах</li>
+            <li>С опытными наставниками</li>
+            <li>Первый проект за 6-8 недель</li>
+          </ul>
           <div class="hero-cta">
-            <button class="btn" onclick="smoothTo('#form')">Записаться на бесплатную диагностику</button>
-            <button class="btn ghost" onclick="smoothTo('#steps')">Узнать, как мы работаем</button>
+            <button class="btn" onclick="smoothTo('#form')">Записаться на оценку уровня</button>
+            <button class="btn ghost" onclick="smoothTo('#steps')">Как мы работаем</button>
           </div>
-          <p class="sub">Более 500 родителей уже выбрали нас. Старт каждую неделю • Без опыта — welcome! • Ограничено 10 мест на этой неделе!</p>
+          <p class="sub">Уже выбрали 500+ родителей • Еженедельный старт • Без опыта OK • 10 мест на неделю!</p>
         </div>
         <div class="hero-image">
-          <div class="ph-hero">Изображение: Ребёнок создаёт игру в Unity (размер: 600x400px)</div>
+          <div class="ph-hero">Изображение: Ребёнок создаёт игру в Unity (600x400px)</div>
           <div class="floating-element floating-circle"></div>
           <div class="floating-element floating-dot"></div>
+          <div class="floating-element floating-line"></div>
         </div>
       </div>
     </div>
@@ -51,18 +57,18 @@
   <!-- STEPS -->
   <section id="steps">
     <div class="wrap">
-      <h2 class="section-title">Как мы поможем вашему ребёнку достичь результатов</h2>
-      <p class="section-sub">Мы фокусируемся на практике: от диагностики до готового проекта. По опросам родителей, 95% учеников завершают курс с портфолио, которое помогает в будущем.</p>
+      <h2 class="section-title">Как поможем достичь результатов</h2>
+      <p class="section-sub">Фокус на практике: от оценки до проекта. 95% учеников заканчивают с портфолио (по отзывам родителей).</p>
       <div class="steps">
-        <div class="step"><div class="num">01</div><h3>Бесплатная диагностика (20 мин)</h3><p class="muted">Оценим интересы и уровень вашего ребёнка, подберём подходящий трек.</p></div>
-        <div class="step"><div class="num">02</div><h3>Подбор наставника</h3><p class="muted">Выберем преподавателя с учётом расписания и стиля обучения вашего ребёнка.</p></div>
-        <div class="step"><div class="num">03</div><h3>Практические занятия</h3><p class="muted">Еженедельные онлайн-созвоны: совместная работа, ревью кода и проектов.</p></div>
-        <div class="step"><div class="num">04</div><h3>Готовый проект и сертификат</h3><p class="muted">Ребёнок представит свой проект и получит сертификат для портфолио.</p></div>
+        <div class="step"><div class="num">01</div><h3>Оценка уровня (20 мин, бесплатно)</h3><p class="muted">Определим интересы и навыки, подберём трек.</p></div>
+        <div class="step"><div class="num">02</div><h3>Выбор наставника</h3><p class="muted">Учёт расписания и стиля вашего ребёнка.</p></div>
+        <div class="step"><div class="num">03</div><h3>Занятия онлайн</h3><p class="muted">Еженедельно: работа вместе, ревью проектов.</p></div>
+        <div class="step"><div class="num">04</div><h3>Проект + сертификат</h3><p class="muted">Готовый результат для портфолио.</p></div>
       </div>
       <div class="results-highlight">
-        <div class="result-item">+30% мотивации к учёбе (по отзывам родителей)</div>
-        <div class="result-item">Первый проект за 6-8 недель</div>
-        <div class="result-item">Навыки для будущей карьеры в IT</div>
+        <div class="result-item">+30% мотивации (отзывы)</div>
+        <div class="result-item">Проект за 6-8 недель</div>
+        <div class="result-item">IT-навыки для карьеры</div>
       </div>
     </div>
   </section>
@@ -70,19 +76,22 @@
   <!-- WHY US -->
   <section id="why">
     <div class="wrap">
-      <h2 class="section-title">Почему родители выбирают PrismaClub</h2>
+      <h2 class="section-title">Почему родители выбирают нас</h2>
       <div class="grid-3">
         <div class="card">
-          <h3>Практический подход</h3>
-          <p class="muted">Не теория, а реальные проекты, которые мотивируют ребёнка.</p>
+          <div class="ph-icon">Иконка: Практика (100x100px)</div>
+          <h3>Практика с первого дня</h3>
+          <p class="muted">Реальные проекты мотивируют ребёнка.</p>
         </div>
         <div class="card">
-          <h3>Гибкое расписание</h3>
-          <p class="muted">Занятия онлайн в удобное время, без пропусков школы.</p>
+          <div class="ph-icon">Иконка: Расписание (100x100px)</div>
+          <h3>Гибкий график</h3>
+          <p class="muted">Онлайн в удобное время, без конфликтов со школой.</p>
         </div>
         <div class="card">
-          <h3>Опытные наставники</h3>
-          <p class="muted">Практикующие специалисты, знающие, как заинтересовать подростка.</p>
+          <div class="ph-icon">Иконка: Наставник (100x100px)</div>
+          <h3>Профи-наставники</h3>
+          <p class="muted">Практики, которые заинтересуют подростка.</p>
         </div>
       </div>
     </div>
@@ -91,37 +100,37 @@
   <!-- TRACKS -->
   <section id="tracks">
     <div class="wrap">
-      <h2 class="section-title">Направления обучения для вашего ребёнка</h2>
-      <p class="section-sub">Каждый трек — это пошаговый план с практическими проектами, адаптированный для подростков 12-17 лет. Мы объясняем просто: что это и зачем.</p>
+      <h2 class="section-title">Направления для вашего ребёнка</h2>
+      <p class="section-sub">Пошаговые планы с проектами для 12-17 лет. Простые объяснения: что и зачем.</p>
       <div class="grid-3">
         <article class="card">
-          <div class="ph">Иконка Unity (размер: 150x150px)</div>
-          <h3>Unity: Создание игр</h3>
-          <p class="muted">Unity — платформа для видеоигр, как в Fortnite. Ребёнок сделает играбельный прототип с меню и логикой за 6-8 недель.</p>
+          <div class="ph">Иконка Unity (150x150px)</div>
+          <h3>Unity: Игры</h3>
+          <p class="muted">Платформа для игр (как Fortnite). Прототип с меню за 6-8 недель.</p>
           <div class="actions"><button class="btn ghost" onclick="smoothTo('#form')">Записаться</button></div>
         </article>
         <article class="card">
-          <div class="ph">Иконка Blender (размер: 150x150px)</div>
-          <h3>Blender: 3D-моделирование</h3>
-          <p class="muted">Blender — программа для 3D, как в мультфильмах. От моделирования до рендера сцены с освещением и материалами.</p>
+          <div class="ph">Иконка Blender (150x150px)</div>
+          <h3>Blender: 3D</h3>
+          <p class="muted">Для моделей (как в мультиках). Рендер сцены с освещением.</p>
           <div class="actions"><button class="btn ghost" onclick="smoothTo('#form')">Записаться</button></div>
         </article>
         <article class="card">
-          <div class="ph">Иконка Python (размер: 150x150px)</div>
-          <h3>Python: Программирование</h3>
-          <p class="muted">Python — язык для автоматизации, как в роботах. Создание мини-приложений, скриптов и работа с Git.</p>
+          <div class="ph">Иконка Python (150x150px)</div>
+          <h3>Python: Код</h3>
+          <p class="muted">Для автоматизации (как роботы). Мини-приложения и Git.</p>
           <div class="actions"><button class="btn ghost" onclick="smoothTo('#form')">Записаться</button></div>
         </article>
         <article class="card">
-          <div class="ph">Иконка Figma (размер: 150x150px)</div>
-          <h3>Figma: Дизайн интерфейсов</h3>
-          <p class="muted">Figma — инструмент для UI, как в приложениях. Создание прототипов сайтов и приложений.</p>
+          <div class="ph">Иконка Figma (150x150px)</div>
+          <h3>Figma: Дизайн UI</h3>
+          <p class="muted">Для интерфейсов (как в apps). Прототипы сайтов.</p>
           <div class="actions"><button class="btn ghost" onclick="smoothTo('#form')">Записаться</button></div>
         </article>
         <article class="card">
-          <div class="ph">Иконка Photoshop (размер: 150x150px)</div>
-          <h3>Photoshop: Графический дизайн</h3>
-          <p class="muted">Photoshop — для редактирования фото и графики. Создание баннеров, иллюстраций.</p>
+          <div class="ph">Иконка Photoshop (150x150px)</div>
+          <h3>Photoshop: Графика</h3>
+          <p class="muted">Редактирование фото. Баннеры и иллюстрации.</p>
           <div class="actions"><button class="btn ghost" onclick="smoothTo('#form')">Записаться</button></div>
         </article>
       </div>
@@ -131,31 +140,31 @@
   <!-- MENTORS -->
   <section id="mentors">
     <div class="wrap">
-      <h2 class="section-title">Наши опытные наставники</h2>
-      <p class="section-sub">Преподаватели — практикующие специалисты, которые знают, как заинтересовать подростка и довести до результата.</p>
+      <h2 class="section-title">Опытные наставники</h2>
+      <p class="section-sub">Практики, которые заинтересуют и доведут до результата.</p>
       <div class="grid-4">
         <article class="card">
-          <div class="ph ph-mentor">Фото наставника (размер: 200x200px)</div>
+          <div class="ph ph-mentor">Фото (200x200px)</div>
           <h3>Алексей — Unity</h3>
-          <p class="muted">«Фокус на практике: от идеи до готовой игры»</p>
+          <p class="muted">«От идеи к игре»</p>
           <div class="actions"><button class="btn ghost" onclick="smoothTo('#form')">Записаться</button></div>
         </article>
         <article class="card">
-          <div class="ph ph-mentor">Фото наставника (размер: 200x200px)</div>
+          <div class="ph ph-mentor">Фото (200x200px)</div>
           <h3>Мария — Blender</h3>
-          <p class="muted">«Творчество в 3D: моделируем мир шаг за шагом»</p>
+          <p class="muted">«Творчество в 3D»</p>
           <div class="actions"><button class="btn ghost" onclick="smoothTo('#form')">Записаться</button></div>
         </article>
         <article class="card">
-          <div class="ph ph-mentor">Фото наставника (размер: 200x200px)</div>
+          <div class="ph ph-mentor">Фото (200x200px)</div>
           <h3>Дмитрий — Python</h3>
-          <p class="muted">«Код как инструмент: решаем реальные задачи»</p>
+          <p class="muted">«Код для задач»</p>
           <div class="actions"><button class="btn ghost" onclick="smoothTo('#form')">Записаться</button></div>
         </article>
         <article class="card">
-          <div class="ph ph-mentor">Фото наставника (размер: 200x200px)</div>
+          <div class="ph ph-mentor">Фото (200x200px)</div>
           <h3>Елена — Figma & Photoshop</h3>
-          <p class="muted">«Дизайн для будущего: от скетча до прототипа»</p>
+          <p class="muted">«Дизайн от скетча»</p>
           <div class="actions"><button class="btn ghost" onclick="smoothTo('#form')">Записаться</button></div>
         </article>
       </div>
@@ -165,28 +174,28 @@
   <!-- CASES -->
   <section id="cases">
     <div class="wrap">
-      <h2 class="section-title">Успехи наших учеников</h2>
-      <p class="section-sub">Реальные проекты, созданные детьми под руководством наставников. Вот истории успеха.</p>
+      <h2 class="section-title">Успехи учеников</h2>
+      <p class="section-sub">Реальные проекты под руководством.</p>
       <div class="grid-4">
         <article class="card">
-          <div class="ph">Фото ученика за Unity (размер: 300x200px)</div>
+          <div class="ph">Фото за Unity (300x200px)</div>
           <h3>Игра в Unity</h3>
-          <p class="muted">14-летний Петя создал прототип за 7 недель. «Теперь сын мотивирован учиться и планирует карьеру в геймдеве!» — мама Петра.</p>
+          <p class="muted">Петя, 14: прототип за 7 недель. «Мотивация выросла!» — мама.</p>
         </article>
         <article class="card">
-          <div class="ph">Фото ученика за Blender (размер: 300x200px)</div>
-          <h3>3D-сцена в Blender</h3>
-          <p class="muted">15-летняя Анна смоделировала город за 8 недель. «Дочь развивает творчество и уверенность!» — отец Анны.</p>
+          <div class="ph">Фото за Blender (300x200px)</div>
+          <h3>3D-сцена</h3>
+          <p class="muted">Анна, 15: город за 8 недель. «Развивает творчество!» — отец.</p>
         </article>
         <article class="card">
-          <div class="ph">Фото ученика за Python (размер: 300x200px)</div>
+          <div class="ph">Фото за Python (300x200px)</div>
           <h3>Бот на Python</h3>
-          <p class="muted">13-летний Максим написал чат-бота за 6 недель. «Сын выиграл школьный конкурс!» — мама Максима.</p>
+          <p class="muted">Максим, 13: за 6 недель. «Выиграл конкурс!» — мама.</p>
         </article>
         <article class="card">
-          <div class="ph">Фото ученика за Figma (размер: 300x200px)</div>
+          <div class="ph">Фото за Figma (300x200px)</div>
           <h3>Прототип в Figma</h3>
-          <p class="muted">16-летний Иван спроектировал app за 7 недель. «Ребёнок нашёл хобби с пользой!» — родители Ивана.</p>
+          <p class="muted">Иван, 16: app за 7 недель. «Полезное хобби!» — родители.</p>
         </article>
       </div>
     </div>
@@ -196,32 +205,32 @@
   <section id="testimonials">
     <div class="wrap">
       <h2 class="section-title">Отзывы родителей</h2>
-      <p class="section-sub">Что говорят родители наших учеников.</p>
+      <p class="section-sub">Что говорят о нас.</p>
       <div class="grid-3">
         <article class="card">
-          <div class="ph ph-parent">Фото родителя (размер: 150x150px)</div>
-          <h3>Анна, мама 14-летнего сына</h3>
-          <p class="muted">«Благодаря PrismaClub сын создал свою первую игру! Теперь он мотивирован и планирует IT-карьеру.»</p>
+          <div class="ph ph-parent">Фото (150x150px)</div>
+          <h3>Анна, мама сына 14 лет</h3>
+          <p class="muted">«Сын создал игру и мотивирован на IT.»</p>
         </article>
         <article class="card">
-          <div class="ph ph-parent">Фото родителя (размер: 150x150px)</div>
-          <h3>Сергей, отец 15-летней дочери</h3>
-          <p class="muted">«Дочь освоила Blender и теперь рисует 3D-модели. Клуб развивает творчество!»</p>
+          <div class="ph ph-parent">Фото (150x150px)</div>
+          <h3>Сергей, отец дочери 15 лет</h3>
+          <p class="muted">«Освоила Blender, развивает творчество.»</p>
         </article>
         <article class="card">
-          <div class="ph ph-parent">Фото родителя (размер: 150x150px)</div>
-          <h3>Ольга, мама 13-летнего сына</h3>
-          <p class="muted">«Python стал любимым предметом. Ребёнок решает задачи самостоятельно!»</p>
+          <div class="ph ph-parent">Фото (150x150px)</div>
+          <h3>Ольга, мама сына 13 лет</h3>
+          <p class="muted">«Python — любимый. Решает задачи сам!»</p>
         </article>
         <article class="card">
-          <div class="ph ph-parent">Фото родителя (размер: 150x150px)</div>
-          <h3>Игорь, отец 16-летнего сына</h3>
-          <p class="muted">«Figma помогла создать портфолио. Рекомендую всем родителям!»</p>
+          <div class="ph ph-parent">Фото (150x150px)</div>
+          <h3>Игорь, отец сына 16 лет</h3>
+          <p class="muted">«Figma для портфолио. Рекомендую!»</p>
         </article>
         <article class="card">
-          <div class="ph ph-parent">Фото родителя (размер: 150x150px)</div>
-          <h3>Екатерина, мама 12-летней дочери</h3>
-          <p class="muted">«Photoshop — супер! Дочь редактирует фото как профи.»</p>
+          <div class="ph ph-parent">Фото (150x150px)</div>
+          <h3>Екатерина, мама дочери 12 лет</h3>
+          <p class="muted">«Photoshop как профи!»</p>
         </article>
       </div>
     </div>
@@ -230,30 +239,30 @@
   <!-- PRICING -->
   <section class="pricing" id="pricing">
     <div class="wrap">
-      <h2 class="section-title">Форматы и стоимость</h2>
-      <p class="section-sub">Гибкие варианты: от бесплатного пробного до абонемента. Оплата напрямую наставнику (самозанятый). Чеки предоставляются.</p>
+      <h2 class="section-title">Форматы и цены</h2>
+      <p class="section-sub">Гибко: от пробного до абонемента. Оплата наставнику напрямую.</p>
       <div class="grid-3">
         <div class="card">
-          <h3>Индивидуальные занятия</h3>
+          <h3>Индивидуально</h3>
           <div class="price">4800 ₽</div>
-          <p class="muted subprice">Абонемент на 4 занятия</p>
-          <p class="muted">Разовая оплата: 1500 ₽</p>
-          <p class="save">Экономия 20% на абонементе</p>
+          <p class="muted subprice">4 занятия (абонемент)</p>
+          <p class="muted">Разово: 1500 ₽</p>
+          <p class="save">Экономия 20%</p>
           <div class="actions"><button class="btn" onclick="smoothTo('#form')">Записаться</button></div>
         </div>
         <div class="card">
-          <h3>Мини-группы (3-8 учеников)</h3>
+          <h3>Мини-группы (3-8)</h3>
           <div class="price">3600 ₽</div>
-          <p class="muted subprice">Абонемент на 4 занятия</p>
-          <p class="muted">Разовая оплата: 1000 ₽</p>
-          <p class="save">Экономия 20% на абонементе</p>
+          <p class="muted subprice">4 занятия (абонемент)</p>
+          <p class="muted">Разово: 1000 ₽</p>
+          <p class="save">Экономия 20%</p>
           <div class="actions"><button class="btn" onclick="smoothTo('#form')">Записаться</button></div>
         </div>
         <div class="card">
-          <h3>Гостевой пропуск</h3>
+          <h3>Гостевой</h3>
           <div class="price">Бесплатно</div>
-          <p class="muted">Открытые часы: знакомство с направлениями. Решите, с чего начать!</p>
-          <div class="actions"><button class="btn" onclick="smoothTo('#form')">Получить пропуск</button></div>
+          <p class="muted">Знакомство с направлениями.</p>
+          <div class="actions"><button class="btn" onclick="smoothTo('#form')">Получить</button></div>
         </div>
       </div>
     </div>
@@ -262,27 +271,27 @@
   <!-- FAQ -->
   <section id="faq">
     <div class="wrap">
-      <h2 class="section-title">Частые вопросы родителей</h2>
+      <h2 class="section-title">Вопросы родителей</h2>
       <div class="faq">
         <div class="faq-item">
-          <div class="faq-q">Подойдёт ли, если ребёнок без опыта? <span>+</span></div>
-          <div class="faq-a">Да, начинаем с основ. 80% учеников приходят новичками и достигают результатов.</div>
+          <div class="faq-q">Без опыта подойдёт? <span>+</span></div>
+          <div class="faq-a">Да, с основ. 80% — новички.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-q">Как проходит оплата и есть ли возврат? <span>+</span></div>
-          <div class="faq-a">Оплата напрямую наставнику. Возврат возможен в первые 7 дней, если не подошло.</div>
+          <div class="faq-q">Оплата и возврат? <span>+</span></div>
+          <div class="faq-a">Наставнику напрямую. Возврат в 7 дней.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-q">Нужен ли специальный компьютер? <span>+</span></div>
-          <div class="faq-a">Достаточно обычного ПК с интернетом. Мы поможем с установкой программ.</div>
+          <div class="faq-q">Компьютер нужен специальный? <span>+</span></div>
+          <div class="faq-a">Обычный с интернетом. Поможем установить.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-q">Какое расписание занятий? <span>+</span></div>
-          <div class="faq-a">Гибкое: согласуем с вами. Обычно 1-2 раза в неделю по 60-90 мин.</div>
+          <div class="faq-q">Расписание? <span>+</span></div>
+          <div class="faq-a">Гибкое: 1-2 раза/нед, 60-90 мин.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-q">Что если ребёнку не понравится? <span>+</span></div>
-          <div class="faq-a">Первая диагностика бесплатная. Если не подойдёт — подберём другой трек или вернём деньги.</div>
+          <div class="faq-q">Не понравится? <span>+</span></div>
+          <div class="faq-a">Оценка бесплатна. Подберём или вернём.</div>
         </div>
       </div>
     </div>
@@ -291,28 +300,26 @@
   <!-- FORM -->
   <section id="form">
     <div class="wrap">
-      <h2 class="section-title">Запишитесь на бесплатную диагностику</h2>
-      <p class="section-sub">Оставьте контакты — наш специалист свяжётся, чтобы обсудить цели вашего ребёнка. Ограничено мест — запишитесь сегодня!</p>
+      <h2 class="section-title">Запишитесь на оценку уровня</h2>
+      <p class="section-sub">Оставьте контакты — обсудим цели. Места ограничены!</p>
       <form class="form" onsubmit="event.preventDefault(); showThanks();" novalidate>
-        <label>Имя*<br><input type="text" placeholder="Имя" required aria-required="true" /></label>
-        <label>Email*<br><input type="email" placeholder="Email" required aria-required="true" /></label>
-        <label>Телефон*<br><input type="tel" placeholder="Телефон" required aria-required="true" /></label>
-        <label>Цель (игра / 3D-сцена / UI / скрипт)…<br>
-          <textarea placeholder="Опиши, чего хочешь добиться (необязательно)"></textarea>
-        </label>
-        <div class="track-pills" role="group" aria-label="Выберите направления">
+        <label>Имя*<br><input type="text" placeholder="Имя" required /></label>
+        <label>Email*<br><input type="email" placeholder="Email" required /></label>
+        <label>Телефон*<br><input type="tel" placeholder="Телефон" required /></label>
+        <label>Цель...<br><textarea placeholder="Опишите цель (опционально)"></textarea></label>
+        <div class="track-pills">
           <span class="pill" data-value="Unity">Unity</span>
           <span class="pill" data-value="Python">Python</span>
           <span class="pill" data-value="Blender">Blender</span>
           <span class="pill" data-value="Figma">Figma</span>
           <span class="pill" data-value="Photoshop">Photoshop</span>
-          <span class="pill" data-value="Не определился" data-any>Не определился</span>
+          <span class="pill" data-any>Не определился</span>
         </div>
-        <p class="muted">Можно выбрать несколько. Если не уверены — «Не определился».</p>
-        <input type="hidden" name="tracks" id="tracksField" value="">
-        <label><input type="checkbox" required /> Я согласен с политикой конфиденциальности</label>
+        <p class="muted">Выберите одно или несколько.</p>
+        <input type="hidden" id="tracksField" value="">
+        <label class="checkbox-label"><input type="checkbox" required /> Согласие с политикой</label>
         <button class="btn" style="width:100%">Отправить</button>
-        <div id="thanks" class="thanks" hidden>Спасибо! Мы свяжемся в течение 24 часов.</div>
+        <div id="thanks" class="thanks" hidden>Спасибо! Свяжемся в 24 ч.</div>
       </form>
     </div>
   </section>
@@ -321,8 +328,8 @@
 <footer>
   <div class="wrap">
     <div style="color:#fff; font-weight:800">PrismaClub</div>
-    <div style="opacity:.8">© 2025 • Объединение самозанятых наставников.</div>
-    <a href="#" class="btn ghost">Задать вопрос в чате (вставьте ссылку на чат-бот)</a>
+    <div style="opacity:.8">© 2025 • Самозанятые наставники.</div>
+    <a href="#" class="btn ghost">Чат (вставьте ссылку)</a>
   </div>
 </footer>
 
