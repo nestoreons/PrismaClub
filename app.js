@@ -49,5 +49,5 @@ function showThanks() {
 // Уважение prefers-reduced-motion
 const mediaReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
 if (mediaReduced.matches) {
-  // Остановить анимации если нужно
+  // Остановить анимации
 }
