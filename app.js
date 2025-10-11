@@ -10,27 +10,35 @@ document.querySelectorAll('.faq-q').forEach(q=>{
   });
 });
 
-// Пиллы выбора направлений (форма)
+// Пиллы выбора направлений
 const pills = Array.from(document.querySelectorAll('.pill'));
 const anyPill = pills.find(p=>p.hasAttribute('data-any'));
 const field = document.getElementById('tracksField');
-if(pills.length && field){
-  let selected = new Set();
-  pills.forEach(p=>{
-    p.addEventListener('click',()=>{
-      if(p.hasAttribute('data-any')){
-        // сбросить остальные
-        selected.clear(); pills.forEach(x=>x.classList.remove('active'));
-        p.classList.add('active'); selected.add(p.dataset.value || 'Не определились');
-      }else{
-        anyPill?.classList.remove('active');
-        if(p.classList.contains('active')){ p.classList.remove('active'); selected.delete(p.dataset.value); }
-        else{ p.classList.add('active'); selected.add(p.dataset.value); }
-      }
-      field.value = Array.from(selected).join(', ');
-    });
-  });
+
+function updateField(){
+  if(!field) return;
+  const active = pills.filter(p=>p.classList.contains('active') && !p.hasAttribute('data-any'))
+                      .map(p=>p.dataset.value);
+  field.value = anyPill && anyPill.classList.contains('active') ? 'Не определился' : active.join(', ');
 }
+
+pills.forEach(p=>{
+  p.setAttribute('tabindex','0');
+  const toggle = () => {
+    if(p.hasAttribute('data-any')){
+      pills.forEach(x=>{ if(x!==p) x.classList.remove('active'); });
+      p.classList.toggle('active');
+    } else {
+      anyPill?.classList.remove('active');
+      p.classList.toggle('active');
+    }
+    // доступность
+    p.setAttribute('aria-pressed', p.classList.contains('active') ? 'true' : 'false');
+    updateField();
+  };
+  p.addEventListener('click', toggle);
+  p.addEventListener('keydown', e=>{ if(e.key===' '||e.key==='Enter'){ e.preventDefault(); toggle(); } });
+});
 
 // Спасибо-экран формы
 function showThanks(){
@@ -38,7 +46,7 @@ function showThanks(){
   if(el){ el.hidden = false; }
 }
 
-// Уважение prefers-reduced-motion (остановить анимацию)
+// Уважение prefers-reduced-motion (если надо — остановить маркизу)
 const mediaReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
 if(mediaReduced.matches){
   const mq = document.querySelector('.marquee');
