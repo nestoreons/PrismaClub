@@ -1,54 +1,53 @@
-// плавный скролл к якорям
-function smoothTo(sel){ document.querySelector(sel)?.scrollIntoView({behavior:'smooth', block:'start'}); }
+// Плавный скролл
+function smoothTo(sel) { document.querySelector(sel)?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
 
 // FAQ аккордеон
-document.querySelectorAll('.faq-q').forEach(q=>{
-  q.addEventListener('click',()=>{
-    const a=q.nextElementSibling; const opened=a.style.display==='block';
-    document.querySelectorAll('.faq-a').forEach(el=>el.style.display='none');
-    a.style.display= opened? 'none':'block';
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const a = q.nextElementSibling;
+    const opened = a.style.display === 'block';
+    document.querySelectorAll('.faq-a').forEach(el => el.style.display = 'none');
+    a.style.display = opened ? 'none' : 'block';
+    q.querySelector('span').textContent = opened ? '+' : '-';
   });
 });
 
-// Пиллы выбора направлений
+// Пиллы
 const pills = Array.from(document.querySelectorAll('.pill'));
-const anyPill = pills.find(p=>p.hasAttribute('data-any'));
+const anyPill = pills.find(p => p.hasAttribute('data-any'));
 const field = document.getElementById('tracksField');
 
-function updateField(){
-  if(!field) return;
-  const active = pills.filter(p=>p.classList.contains('active') && !p.hasAttribute('data-any'))
-                      .map(p=>p.dataset.value);
+function updateField() {
+  if (!field) return;
+  const active = pills.filter(p => p.classList.contains('active') && !p.hasAttribute('data-any')).map(p => p.dataset.value);
   field.value = anyPill && anyPill.classList.contains('active') ? 'Не определился' : active.join(', ');
 }
 
-pills.forEach(p=>{
-  p.setAttribute('tabindex','0');
+pills.forEach(p => {
+  p.setAttribute('tabindex', '0');
   const toggle = () => {
-    if(p.hasAttribute('data-any')){
-      pills.forEach(x=>{ if(x!==p) x.classList.remove('active'); });
+    if (p.hasAttribute('data-any')) {
+      pills.forEach(x => { if (x !== p) x.classList.remove('active'); });
       p.classList.toggle('active');
     } else {
       anyPill?.classList.remove('active');
       p.classList.toggle('active');
     }
-    // доступность
     p.setAttribute('aria-pressed', p.classList.contains('active') ? 'true' : 'false');
     updateField();
   };
   p.addEventListener('click', toggle);
-  p.addEventListener('keydown', e=>{ if(e.key===' '||e.key==='Enter'){ e.preventDefault(); toggle(); } });
+  p.addEventListener('keydown', e => { if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); toggle(); } });
 });
 
-// Спасибо-экран формы
-function showThanks(){
+// Спасибо
+function showThanks() {
   const el = document.getElementById('thanks');
-  if(el){ el.hidden = false; }
+  if (el) { el.hidden = false; }
 }
 
-// Уважение prefers-reduced-motion (если надо — остановить маркизу)
+// Уважение prefers-reduced-motion
 const mediaReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-if(mediaReduced.matches){
-  const mq = document.querySelector('.marquee');
-  if(mq) mq.style.animation = 'none';
+if (mediaReduced.matches) {
+  // Остановить анимации если нужно
 }
