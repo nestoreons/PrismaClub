@@ -32,9 +32,16 @@
       <div class="hero-card">
         <div class="hero-content">
           <h1 class="hero-title">Развивайте таланты вашего ребёнка в программировании: от новичка до первого проекта</h1>
-          <p class="hero-sub">Для подростков 12-17 лет: освойте Unity, Blender, Python, Figma, Photoshop в индивидуальных или групповых занятиях. Первый проект — за 6-8 недель!</p>
+          <div class="hero-sub">
+            <ul>
+              <li>Для подростков 12-17 лет</li>
+              <li>Освойте Unity, Blender, Python, Figma, Photoshop</li>
+              <li>Индивидуальные или групповые занятия</li>
+              <li>Первый проект — за 6-8 недель!</li>
+            </ul>
+          </div>
           <div class="hero-cta">
-            <button class="btn" onclick="smoothTo('#form')">Записаться на бесплатную оценку уровня</button>
+            <button class="btn pulse" onclick="smoothTo('#form')">Записаться на занятие</button>
             <button class="btn ghost" onclick="smoothTo('#steps')">Узнать, как мы работаем</button>
           </div>
           <p class="sub">Более 500 родителей выбрали нас. Старт еженедельно • Без опыта — welcome! • 10 мест на этой неделе!</p>
@@ -62,7 +69,6 @@
         <div class="step"><div class="num">04</div><h3>Готовый проект и сертификат</h3><p class="muted">Представит проект, получит сертификат для портфолио.</p></div>
       </div>
       <div class="results-highlight">
-        <div class="result-item">+30% мотивации к учёбе</div>
         <div class="result-item">Первый проект за 6-8 недель</div>
         <div class="result-item">Навыки для IT-карьеры</div>
       </div>
@@ -244,7 +250,7 @@
           <p class="muted subprice">Абонемент на 4 занятия</p>
           <p class="muted">Разовая: 1500 ₽</p>
           <p class="save">Экономия 20%</p>
-          <div class="actions"><button class="btn" onclick="smoothTo('#form')">Записаться</button></div>
+          <div class="actions"><button class="btn large" onclick="smoothTo('#form')">Записаться</button></div>
         </div>
         <div class="card">
           <h3>Мини-группы (3-8 учеников)</h3>
@@ -252,13 +258,13 @@
           <p class="muted subprice">Абонемент на 4 занятия</p>
           <p class="muted">Разовая: 1000 ₽</p>
           <p class="save">Экономия 20%</p>
-          <div class="actions"><button class="btn" onclick="smoothTo('#form')">Записаться</button></div>
+          <div class="actions"><button class="btn large" onclick="smoothTo('#form')">Записаться</button></div>
         </div>
         <div class="card">
           <h3>Гостевой пропуск</h3>
           <div class="price">Бесплатно</div>
           <p class="muted">Открытые часы: знакомство с направлениями.</p>
-          <div class="actions"><button class="btn" onclick="smoothTo('#form')">Получить</button></div>
+          <div class="actions"><button class="btn large" onclick="smoothTo('#form')">Получить</button></div>
         </div>
       </div>
     </div>
@@ -315,7 +321,7 @@
         </div>
         <p class="muted">Можно несколько. Если не уверены — «Не определился».</p>
         <input type="hidden" name="tracks" id="tracksField" value="">
-        <label class="checkbox-label"><input type="checkbox" required /> Я согласен с политикой конфиденциальности</label>
+        <label class="checkbox-label"><input type="checkbox" required />Я согласен с политикой конфиденциальности</label>
         <button class="btn" style="width:100%">Отправить</button>
         <div id="thanks" class="thanks" hidden>Спасибо! Свяжемся в 24 часа.</div>
       </form>
