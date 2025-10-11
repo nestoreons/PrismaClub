@@ -58,7 +58,7 @@ const navLinks = document.querySelectorAll('.navlink');
 
 const observerOptions = {
   root: null,
-  rootMargin: '0px 0px -50% 0px',
+  rootMargin: '-20% 0px -50% 0px',
   threshold: 0.1
 };
 
@@ -74,10 +74,19 @@ const observer = new IntersectionObserver(entries => {
 
 sections.forEach(section => observer.observe(section));
 
+// Mentor details toggle
+document.querySelectorAll('.mentor-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const details = btn.closest('.card').querySelector('.mentor-details');
+    details.style.display = details.style.display === 'block' ? 'none' : 'block';
+  });
+});
+
 // Уважение prefers-reduced-motion
 const mediaReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
 if (mediaReduced.matches) {
   // Остановить анимации
   document.querySelectorAll('.floating-element').forEach(el => el.style.animation = 'none');
   document.querySelectorAll('.pulse').forEach(el => el.style.animation = 'none');
+  document.querySelectorAll('.glow').forEach(el => el.style.animation = 'none');
 }
