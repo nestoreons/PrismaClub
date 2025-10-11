@@ -1,17 +1,16 @@
 <!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>PrismaClub — Курсы</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 <header>
   <div class="wrap nav">
     <div class="brand">
       <a class="logo" href="index.html">PrismaClub</a>
-      <div class="tag">клуб менторов</div>
     </div>
     <nav class="topnav">
       <a class="navlink" href="index.html">Главная</a>
@@ -26,184 +25,128 @@
   <section class="hero slim">
     <div class="wrap">
       <div class="hero-card">
-        <h1 class="hero-title">Курсы и треки</h1>
-        <p class="sub">Выберите направление — снизу раскроется краткий план по неделям.</p>
+        <h1 class="hero-title">Направления и планы занятий</h1>
+        <p class="sub">Выберите направление. Внизу — краткий план модулей (названия).</p>
       </div>
     </div>
   </section>
 
-  <section>
+  <section id="unity">
     <div class="wrap">
-      <div class="tabs" data-tabs="courses">
-        <button class="tab active" data-target="unity">Unity</button>
-        <button class="tab" data-target="python">Python</button>
-        <button class="tab" data-target="blender">Blender</button>
-        <button class="tab" data-target="figma">Figma</button>
-        <button class="tab" data-target="photoshop">Photoshop</button>
+      <h2 class="section-title">Unity — играбельный прототип</h2>
+      <div class="grid-2">
+        <article class="card">
+          <div class="ph">Обложка Unity</div>
+          <h3>Что сделаешь</h3>
+          <ul class="muted">
+            <li>Игровая сцена, управление, столкновения</li>
+            <li>Меню и базовый UI</li>
+            <li>Сборка под WebGL</li>
+          </ul>
+          <div class="actions"><a class="btn" href="index.html#form">Записаться на пробное</a></div>
+        </article>
+        <article class="card">
+          <h3>Краткий план модулей</h3>
+          <ul class="muted">
+            <li>Сцена и объекты</li>
+            <li>Движение персонажа</li>
+            <li>Коллизии</li>
+            <li>Проект: 2D-платформер</li>
+          </ul>
+          <div class="actions"><a class="btn ghost" href="mentors.html#unity">Наставники Unity</a></div>
+        </article>
       </div>
+    </div>
+  </section>
 
-      <!-- UNITY -->
-      <div class="tab-body active" id="unity">
-        <div class="grid-2">
-          <article class="card theme-unity">
-            <div class="ph ph-ring">Unity</div>
-            <h3>Что сделает ученик</h3>
-            <ul class="muted">
-              <li>Игровая сцена и управление</li>
-              <li>Меню и базовый UI</li>
-              <li>Сборка под WebGL</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Краткий план 6–8 недель</h3>
-            <ol class="muted weeks">
-              <li>Неделя 1 — установка, базовая сцена</li>
-              <li>Неделя 2 — управление и камера</li>
-              <li>Неделя 3 — коллизии/физика</li>
-              <li>Неделя 4 — UI/меню</li>
-              <li>Неделя 5 — логика и враги</li>
-              <li>Неделя 6 — полировка и сборка</li>
-              <li>Неделя 7–8 — доп. фичи / показ</li>
-            </ol>
-            <div class="actions">
-              <a class="btn" href="index.html#form">Записаться на диагностику</a>
-              <a class="btn ghost" href="mentors.html#unity">Менторы по Unity</a>
-            </div>
-          </article>
-        </div>
+  <section id="python">
+    <div class="wrap">
+      <h2 class="section-title">Python — первые программы и мини-игра</h2>
+      <div class="grid-2">
+        <article class="card">
+          <div class="ph">Обложка Python</div>
+          <h3>Что сделаешь</h3>
+          <ul class="muted">
+            <li>Переменные и условия</li>
+            <li>Циклы и функции</li>
+            <li>Мини-игра/пет-проект</li>
+          </ul>
+          <div class="actions"><a class="btn" href="index.html#form">Записаться на пробное</a></div>
+        </article>
+        <article class="card">
+          <h3>Краткий план модулей</h3>
+          <ul class="muted">
+            <li>Введение</li>
+            <li>Переменные и условия</li>
+            <li>Циклы</li>
+            <li>Проект: мини-игра</li>
+          </ul>
+          <div class="actions"><a class="btn ghost" href="mentors.html#python">Наставники Python</a></div>
+        </article>
       </div>
+    </div>
+  </section>
 
-      <!-- PYTHON -->
-      <div class="tab-body" id="python">
-        <div class="grid-2">
-          <article class="card theme-python">
-            <div class="ph ph-ring">Python</div>
-            <h3>Что сделает ученик</h3>
-            <ul class="muted">
-              <li>CLI/бот/скрипт</li>
-              <li>Git и структура проекта</li>
-              <li>Публикация репозитория</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Краткий план 6–8 недель</h3>
-            <ol class="muted weeks">
-              <li>Неделя 1 — синтаксис/IDE</li>
-              <li>Неделя 2 — основы ООП/модули</li>
-              <li>Неделя 3 — работа с файлами/сетями</li>
-              <li>Неделя 4 — логика приложения</li>
-              <li>Неделя 5 — упаковка/аргументы</li>
-              <li>Неделя 6 — тесты и README</li>
-              <li>Неделя 7–8 — публикация/показ</li>
-            </ol>
-            <div class="actions">
-              <a class="btn" href="index.html#form">Записаться на диагностику</a>
-              <a class="btn ghost" href="mentors.html#python">Менторы по Python</a>
-            </div>
-          </article>
-        </div>
+  <section id="blender">
+    <div class="wrap">
+      <h2 class="section-title">Blender — моделирование и рендер</h2>
+      <div class="grid-2">
+        <article class="card">
+          <div class="ph">Обложка Blender</div>
+          <h3>Что сделаешь</h3>
+          <ul class="muted">
+            <li>Базовое моделирование</li>
+            <li>Материалы/свет</li>
+            <li>Финальный рендер</li>
+          </ul>
+          <div class="actions"><a class="btn" href="index.html#form">Записаться на пробное</a></div>
+        </article>
+        <article class="card">
+          <h3>Краткий план модулей</h3>
+          <ul class="muted">
+            <li>Интерфейс</li>
+            <li>Моделирование</li>
+            <li>Материалы</li>
+            <li>Проект: объект для сцены</li>
+          </ul>
+          <div class="actions"><a class="btn ghost" href="mentors.html#blender">Наставники Blender</a></div>
+        </article>
       </div>
+    </div>
+  </section>
 
-      <!-- BLENDER -->
-      <div class="tab-body" id="blender">
-        <div class="grid-2">
-          <article class="card theme-blender">
-            <div class="ph ph-ring">Blender</div>
-            <h3>Что сделает ученик</h3>
-            <ul class="muted">
-              <li>Моделинг и материалы</li>
-              <li>Свет и камера</li>
-              <li>Финальный рендер</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Краткий план 6–8 недель</h3>
-            <ol class="muted weeks">
-              <li>Неделя 1 — интерфейс/навигация</li>
-              <li>Неделя 2 — моделинг базовых форм</li>
-              <li>Неделя 3 — материалы/UV</li>
-              <li>Неделя 4 — освещение</li>
-              <li>Неделя 5 — камера/композиция</li>
-              <li>Неделя 6 — рендер/пост</li>
-              <li>Неделя 7–8 — сцена/показ</li>
-            </ol>
-            <div class="actions">
-              <a class="btn" href="index.html#form">Записаться на диагностику</a>
-              <a class="btn ghost" href="mentors.html#blender">Менторы по Blender</a>
-            </div>
-          </article>
-        </div>
+  <section id="figma">
+    <div class="wrap">
+      <h2 class="section-title">Figma — первый макет</h2>
+      <div class="grid-2">
+        <article class="card">
+          <div class="ph">Обложка Figma</div>
+          <h3>Что сделаешь</h3>
+          <ul class="muted">
+            <li>Фреймы и сетки</li>
+            <li>Компоненты</li>
+            <li>Прототип</li>
+          </ul>
+          <div class="actions"><a class="btn" href="index.html#form">Записаться на пробное</a></div>
+        </article>
+        <article class="card">
+          <h3>Краткий план модулей</h3>
+          <ul class="muted">
+            <li>Фреймы и сетки</li>
+            <li>Компоненты</li>
+            <li>Прототип</li>
+            <li>Проект: макет страницы</li>
+          </ul>
+          <div class="actions"><a class="btn ghost" href="mentors.html#figma">Наставники Figma</a></div>
+        </article>
       </div>
-
-      <!-- FIGMA -->
-      <div class="tab-body" id="figma">
-        <div class="grid-2">
-          <article class="card theme-figma">
-            <div class="ph ph-ring">Figma</div>
-            <h3>Что сделает ученик</h3>
-            <ul class="muted">
-              <li>Сетка и компоненты</li>
-              <li>Прототипирование</li>
-              <li>Мини UI-kit</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Краткий план 6–8 недель</h3>
-            <ol class="muted weeks">
-              <li>Неделя 1 — основы/сеткa</li>
-              <li>Неделя 2 — компоненты/автолэйаут</li>
-              <li>Неделя 3 — навигация/карты</li>
-              <li>Неделя 4 — прототип</li>
-              <li>Неделя 5 — дизайн-система</li>
-              <li>Неделя 6 — презентация</li>
-              <li>Неделя 7–8 — полировка/показ</li>
-            </ol>
-            <div class="actions">
-              <a class="btn" href="index.html#form">Записаться на диагностику</a>
-              <a class="btn ghost" href="mentors.html#figma">Менторы по Figma</a>
-            </div>
-          </article>
-        </div>
-      </div>
-
-      <!-- PHOTOSHOP -->
-      <div class="tab-body" id="photoshop">
-        <div class="grid-2">
-          <article class="card theme-ps">
-            <div class="ph ph-ring">PS</div>
-            <h3>Что сделает ученик</h3>
-            <ul class="muted">
-              <li>Композиция и ретушь</li>
-              <li>Работа со слоями/масками</li>
-              <li>Экспорт/презентация</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Краткий план 6–8 недель</h3>
-            <ol class="muted weeks">
-              <li>Неделя 1 — интерфейс/инструменты</li>
-              <li>Неделя 2 — слои/маски</li>
-              <li>Неделя 3 — цвет/фильтры</li>
-              <li>Неделя 4 — композиция</li>
-              <li>Неделя 5 — постобработка</li>
-              <li>Неделя 6 — итоговый макет</li>
-              <li>Неделя 7–8 — портфолио/показ</li>
-            </ol>
-            <div class="actions">
-              <a class="btn" href="index.html#form">Записаться на диагностику</a>
-              <a class="btn ghost" href="mentors.html#photoshop">Менторы по Photoshop</a>
-            </div>
-          </article>
-        </div>
-      </div>
-
     </div>
   </section>
 </main>
 
 <footer>
   <div class="wrap">
-    <div style="color:#fff;font-weight:800">PrismaClub</div>
+    <div style="color:#fff; font-weight:800">PrismaClub</div>
     <div style="opacity:.8">© 2025 • Объединение самозанятых менторов.</div>
   </div>
 </footer>
