@@ -1,157 +1,173 @@
 <!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PrismaClub — клуб менторов</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>PrismaClub — занятия с наставником</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 <header>
   <div class="wrap nav">
     <div class="brand">
       <a class="logo" href="index.html">PrismaClub</a>
+      <div class="tag">клуб менторов → Unity • Blender • Python • Figma • Photoshop</div>
     </div>
     <nav class="topnav">
       <a class="navlink active" href="index.html">Главная</a>
       <a class="navlink" href="courses.html">Курсы</a>
       <a class="navlink" href="mentors.html">Менторы</a>
-      <button class="btn" onclick="smoothTo('#form')">Записаться</button>
+      <a class="btn" href="#form">Записаться</a>
     </nav>
   </div>
 </header>
 
 <main>
+
   <!-- HERO -->
   <section class="hero">
+    <!-- декоративная сцена -->
+    <div class="scene">
+      <span class="blob b1"></span>
+      <span class="blob b2"></span>
+      <span class="blob b3"></span>
+      <span class="capsule c1"></span>
+      <span class="capsule c2"></span>
+      <span class="dot d1"></span>
+      <span class="dot d2"></span>
+    </div>
+
     <div class="wrap">
       <div class="hero-card">
-        <h1 class="hero-title">Индивидуальные менторы и мини-группы</h1>
-        <div class="hero-row">
-          <div class="chip">Проектная работа: Unity • Blender • Python • Figma • Photoshop</div>
-          <div class="chip">Пошаговый трек под твою цель</div>
-        </div>
+        <h1 class="hero-title">Занятия с наставником: цифровые проекты вместо гаджетов</h1>
+        <p class="hero-sub">
+          Unity, Blender, Python, Figma, Photoshop — ребёнок делает свой проект шаг за шагом
+          с личным ментором или в мини-группе.
+        </p>
 
-        <!-- marquee -->
-        <div class="marquee-shell" aria-label="направления">
-          <div class="fade-left"></div><div class="fade-right"></div>
-          <div class="marquee">
-            <div class="icon-card">Иконка Unity</div>
-            <div class="icon-card">Иконка Blender</div>
-            <div class="icon-card">Иконка Python</div>
-            <div class="icon-card">Иконка Figma</div>
-            <div class="icon-card">Иконка Photoshop</div>
-            <div class="icon-card">Иконка Blender</div>
-            <div class="icon-card">Иконка Unity</div>
-            <div class="icon-card">Иконка Figma</div>
-            <div class="icon-card">Иконка Python</div>
-            <div class="icon-card">Иконка Photoshop</div>
-          </div>
+        <div class="hero-badges">
+          <span class="badge">1-на-1 и мини-группы</span>
+          <span class="badge">Показы работ</span>
+          <span class="badge">Отчёты родителям</span>
         </div>
 
         <div class="hero-cta">
-          <a class="btn" href="mentors.html">Подобрать ментора</a>
-          <button class="btn ghost" onclick="smoothTo('#cases')">Смотреть проекты</button>
+          <a class="btn" href="mentors.html">Подобрать наставника</a>
+          <a class="btn ghost" href="#form">Задать вопрос</a>
         </div>
-        <p class="sub">Первый набор открыт • Старт каждую неделю</p>
       </div>
     </div>
   </section>
 
-  <!-- STEPS -->
+  <!-- КАК МЫ РАБОТАЕМ -->
   <section>
     <div class="wrap">
       <h2 class="section-title">Как мы работаем</h2>
       <div class="steps">
-        <div class="step"><div class="num">01</div><h3>Диагностика 20 мин</h3><p class="muted">Понимаем цель и опыт. Помогаем выбрать трек.</p></div>
-        <div class="step"><div class="num">02</div><h3>Подбор ментора</h3><p class="muted">Смотрим стиль, стек и расписание, согласуем старт.</p></div>
-        <div class="step"><div class="num">03</div><h3>Совместные созвоны</h3><p class="muted">Еженедельные практические мастерские: шэр экрана, ревью, правки.</p></div>
-        <div class="step"><div class="num">04</div><h3>Показ результата</h3><p class="muted">Финальный показ и следующий шаг развития.</p></div>
+        <div class="step icon01">
+          <div class="num">01</div>
+          <h3>Диагностика 20 мин</h3>
+          <p class="muted">Выясняем цель и опыт. Помогаем выбрать направление.</p>
+        </div>
+        <div class="step icon02">
+          <div class="num">02</div>
+          <h3>Подбор наставника</h3>
+          <p class="muted">Согласуем время и формат: индивидуально или мини-группа.</p>
+        </div>
+        <div class="step icon03">
+          <div class="num">03</div>
+          <h3>Совместные созвоны</h3>
+          <p class="muted">Еженедельная практика: экран-шер, ревью, правки.</p>
+        </div>
+        <div class="step icon04">
+          <div class="num">04</div>
+          <h3>Показ результата</h3>
+          <p class="muted">Итоговый показ, следующий шаг и рекомендации.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- TRACKS (тизер) -->
+  <!-- ТРЕКИ (тизер) -->
   <section id="tracks">
     <div class="wrap">
       <h2 class="section-title">Треки PrismaClub</h2>
       <div class="grid-3">
-        <article class="card">
-          <div class="ph">Превью трека Unity</div>
-          <h3>Unity — играбельный прототип</h3>
+        <article class="card theme-unity">
+          <div class="ph ph-ring">Unity</div>
+          <h3>Играбельный прототип</h3>
           <p class="muted">Меню, управление, базовая логика за 6–8 недель.</p>
           <div class="actions"><a class="btn" href="courses.html#unity">План трека</a></div>
         </article>
-        <article class="card">
-          <div class="ph">Превью трека Blender</div>
-          <h3>Blender — сцена и рендер</h3>
+        <article class="card theme-blender">
+          <div class="ph ph-ring">Blender</div>
+          <h3>Сцена и рендер</h3>
           <p class="muted">Моделинг, свет, материалы, камера, финальный рендер.</p>
           <div class="actions"><a class="btn" href="courses.html#blender">План трека</a></div>
         </article>
-        <article class="card">
-          <div class="ph">Превью трека Python</div>
-          <h3>Python — мини-приложение</h3>
+        <article class="card theme-python">
+          <div class="ph ph-ring">Python</div>
+          <h3>Мини-приложение</h3>
           <p class="muted">CLI/бот/скрипт, Git и структура проекта.</p>
           <div class="actions"><a class="btn" href="courses.html#python">План трека</a></div>
         </article>
       </div>
-      <p class="muted" style="margin-top:10px">Больше направлений — на странице «Курсы».</p>
     </div>
   </section>
 
-  <!-- MENTORS (тизер) -->
-  <section id="mentors">
+  <!-- МЕНТОРЫ (тизер) -->
+  <section>
     <div class="wrap">
       <h2 class="section-title">Менторы PrismaClub</h2>
-      <div class="grid-4">
-        <article class="card">
-          <div class="ph ph-mentor">Фото ментора 1×1</div>
+      <div class="grid-4 dark-panel">
+        <article class="card glass">
+          <div class="ph ph-mentor">Фото 1×1</div>
           <h3>Имя — Unity</h3>
-          <p class="muted">«Короткая фраза о подходе»</p>
+          <p class="muted">2–3 буллета про подход.</p>
           <div class="actions"><a class="btn" href="mentors.html#unity">Подробнее</a></div>
         </article>
-        <article class="card">
-          <div class="ph ph-mentor">Фото ментора 1×1</div>
+        <article class="card glass">
+          <div class="ph ph-mentor">Фото 1×1</div>
           <h3>Имя — Python</h3>
-          <p class="muted">«Короткая фраза о подходе»</p>
+          <p class="muted">2–3 буллета про подход.</p>
           <div class="actions"><a class="btn" href="mentors.html#python">Подробнее</a></div>
         </article>
-        <article class="card">
-          <div class="ph ph-mentor">Фото ментора 1×1</div>
+        <article class="card glass">
+          <div class="ph ph-mentor">Фото 1×1</div>
           <h3>Имя — Blender</h3>
-          <p class="muted">«Короткая фраза о подходе»</p>
+          <p class="muted">2–3 буллета про подход.</p>
           <div class="actions"><a class="btn" href="mentors.html#blender">Подробнее</a></div>
         </article>
-        <article class="card">
-          <div class="ph ph-mentor">Фото ментора 1×1</div>
+        <article class="card glass">
+          <div class="ph ph-mentor">Фото 1×1</div>
           <h3>Имя — Figma</h3>
-          <p class="muted">«Короткая фраза о подходе»</p>
+          <p class="muted">2–3 буллета про подход.</p>
           <div class="actions"><a class="btn" href="mentors.html#figma">Подробнее</a></div>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- COMMUNITY -->
+  <!-- ПРАКТИКИ -->
   <section>
     <div class="wrap">
-      <h2 class="section-title">Практики и встречи клуба</h2>
+      <h2 class="section-title">Практики и встречи</h2>
       <div class="grid-3">
         <div class="card">
-          <div class="ph">Обложка «Открытые часы»</div>
-          <h3>Открытые часы — бесплатно</h3>
+          <div class="ph">Открытые часы</div>
+          <h3>Бесплатно</h3>
           <p class="muted">Знакомство и Q&A, 30–45 мин/нед. Для новичков и родителей.</p>
           <div class="actions"><a class="btn" href="#form">Получить ссылку</a></div>
         </div>
         <div class="card">
-          <div class="ph">Обложка «Мастерская»</div>
-          <h3>Практическая мастерская — для учеников</h3>
+          <div class="ph">Мастерская</div>
+          <h3>Для учеников</h3>
           <p class="muted">90-мин еженедельная работа над проектом: шэр экрана, ревью, правки.</p>
           <div class="actions"><a class="btn" href="courses.html">Записаться в трек</a></div>
         </div>
         <div class="card">
-          <div class="ph">Обложка «Демо-ночь»</div>
-          <h3>Демо-ночь — раз в месяц</h3>
+          <div class="ph">Демо-ночь</div>
+          <h3>Раз в месяц</h3>
           <p class="muted">Показы результатов, вопросы, поиск напарников.</p>
           <div class="actions"><a class="btn" href="#form">Стать гостем</a></div>
         </div>
@@ -159,25 +175,25 @@
     </div>
   </section>
 
-  <!-- CASES -->
+  <!-- КЕЙСЫ -->
   <section id="cases">
     <div class="wrap">
       <h2 class="section-title">Кейсы проектов</h2>
-      <div class="grid-4">
-        <article class="card"><div class="ph">Кейс #1</div><h3>Пример проекта</h3><p class="muted">«Что сделал» • «за сколько недель» • инсайт.</p></article>
-        <article class="card"><div class="ph">Кейс #2</div><h3>Пример проекта</h3><p class="muted">«Что сделал» • «за сколько недель» • инсайт.</p></article>
-        <article class="card"><div class="ph">Кейс #3</div><h3>Пример проекта</h3><p class="muted">«Что сделал» • «за сколько недель» • инсайт.</p></article>
-        <article class="card"><div class="ph">Кейс #4</div><h3>Пример проекта</h3><p class="muted">«Что сделал» • «за сколько недель» • инсайт.</p></article>
+      <div class="grid-4 dotted">
+        <article class="card"><div class="ph">Кейс #1</div><h3>Пример проекта</h3><p class="muted">Что сделал • за сколько недель • инсайт.</p></article>
+        <article class="card"><div class="ph">Кейс #2</div><h3>Пример проекта</h3><p class="muted">Что сделал • за сколько недель • инсайт.</p></article>
+        <article class="card"><div class="ph">Кейс #3</div><h3>Пример проекта</h3><p class="muted">Что сделал • за сколько недель • инсайт.</p></article>
+        <article class="card"><div class="ph">Кейс #4</div><h3>Пример проекта</h3><p class="muted">Что сделал • за сколько недель • инсайт.</p></article>
       </div>
     </div>
   </section>
 
-  <!-- PRICING -->
+  <!-- ЦЕНЫ -->
   <section class="pricing">
     <div class="wrap">
       <h2 class="section-title">Форматы и цены</h2>
       <div class="grid-3">
-        <div class="card">
+        <div class="card price-card">
           <h3>1-на-1</h3>
           <div class="price">1250 ₽ / час</div>
           <p class="muted subprice">Абонемент 4 занятия</p>
@@ -185,7 +201,7 @@
           <p class="save">Абонемент выгоднее на ~17%</p>
           <div class="actions"><a class="btn" href="#form">Записаться</a></div>
         </div>
-        <div class="card">
+        <div class="card price-card">
           <h3>Мини-группа 3–5</h3>
           <div class="price">800 ₽ / занятие</div>
           <p class="muted subprice">Абонемент 4 занятия</p>
@@ -193,7 +209,7 @@
           <p class="save">Абонемент выгоднее на ~20%</p>
           <div class="actions"><a class="btn" href="#form">Записаться</a></div>
         </div>
-        <div class="card">
+        <div class="card price-card">
           <h3>Гостевой пропуск</h3>
           <div class="price">Бесплатно</div>
           <p class="muted">Открытые часы: знакомство и Q&A. Реши, с чего начать.</p>
@@ -213,33 +229,33 @@
           <div class="faq-q">Открытые часы, мастерская и демо-ночь — что это? <span>+</span></div>
           <div class="faq-a">
             <p><b>Открытые часы</b> — бесплатные 30–45 мин Q&A для всех. Знакомство с форматом, не урок.</p>
-            <p><b>Мастерская</b> — 90 мин/нед для учеников: прогресс, шэр экрана, правки. Входит в обучение.</p>
+            <p><b>Мастерская</b> — 90 мин/нед для учеников: прогресс, шэр экрана, правки. Входит в занятия.</p>
             <p><b>Демо-ночь</b> — раз в месяц: короткие показы, вопросы, можно присоединиться гостем.</p>
           </div>
         </div>
         <div class="faq-item">
           <div class="faq-q">Можно без опыта? <span>+</span></div>
-          <div class="faq-a">Да. Начинаем с диагностики, выбираем трек и темп. Цель — первый завершённый проект.</div>
+          <div class="faq-a">Да. Начинаем с диагностики, выбираем трек и темп. Цель — завершённый проект.</div>
         </div>
         <div class="faq-item">
           <div class="faq-q">Как записаться и кто проводит занятия? <span>+</span></div>
-          <div class="faq-a">Оставляете контакты — ментор связывается, согласует формат (1-на-1 или мини-группа) и старт.</div>
+          <div class="faq-a">Оставьте контакты — ментор свяжется, согласует формат (1-на-1 или мини-группа) и старт.</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- ФОРМА -->
   <section id="form">
     <div class="wrap">
       <h2 class="section-title">Диагностика 20 минут</h2>
-      <p class="muted">Оставь контакты — подберём трек и ментора. <b>* — обязательные поля</b></p>
+      <p class="muted">Оставьте контакты — подберём трек и наставника. <b>* — обязательные поля</b></p>
       <form class="form" onsubmit="event.preventDefault(); showThanks();" novalidate>
-        <label>Имя*<br><input type="text" placeholder="Имя" required aria-required="true" /></label>
-        <label>Email*<br><input type="email" placeholder="Email" required aria-required="true" /></label>
-        <label>Телефон*<br><input type="tel" placeholder="Телефон" required aria-required="true" /></label>
+        <label>Имя*<br><input type="text" placeholder="Имя" required/></label>
+        <label>Email*<br><input type="email" placeholder="Email" required/></label>
+        <label>Телефон*<br><input type="tel" placeholder="Телефон" required/></label>
         <label>Цель (игра / 3D-сцена / UI / скрипт)…<br>
-          <textarea placeholder="Опиши, чего хочешь добиться (необязательно)"></textarea>
+          <textarea placeholder="Опишите, чего хотите добиться (необязательно)"></textarea>
         </label>
 
         <div class="track-pills" role="group" aria-label="Выберите направления">
@@ -250,12 +266,11 @@
           <span class="pill" data-value="Photoshop">Photoshop</span>
           <span class="pill" data-value="Не определился" data-any>Не определился</span>
         </div>
-        <p class="muted">Можно выбрать несколько направлений. Если не уверен — нажми «Не определился».</p>
+        <input type="hidden" id="tracksField" name="tracks" value="">
+        <label class="agree"><input type="checkbox" required/> Я согласен с политикой конфиденциальности</label>
 
-        <input type="hidden" name="tracks" id="tracksField" value="">
-        <label><input type="checkbox" required /> Я согласен с политикой конфиденциальности</label>
         <button class="btn" style="width:100%">Отправить</button>
-        <div id="thanks" class="thanks" hidden>Спасибо! Мы свяжемся с вами в течение 24 часов.</div>
+        <div id="thanks" class="toast" hidden>Спасибо! Мы свяжемся с вами в течение 24 часов.</div>
       </form>
     </div>
   </section>
@@ -263,7 +278,7 @@
 
 <footer>
   <div class="wrap">
-    <div style="color:#fff; font-weight:800">PrismaClub</div>
+    <div style="color:#fff;font-weight:800">PrismaClub</div>
     <div style="opacity:.8">© 2025 • Объединение самозанятых менторов.</div>
   </div>
 </footer>
