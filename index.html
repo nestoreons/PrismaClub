@@ -11,7 +11,7 @@
 <header>
   <div class="wrap nav">
     <div class="brand">
-      <a class="logo" href="index.html">PrismaClub</a>
+      <a class="logo glow" href="index.html">PrismaClub</a>
     </div>
     <nav class="topnav">
       <a class="navlink active" href="#hero">Главная</a>
@@ -20,7 +20,7 @@
       <a class="navlink" href="#cases">Кейсы</a>
       <a class="navlink" href="#pricing">Цены</a>
       <a class="navlink" href="#faq">FAQ</a>
-      <button class="btn" onclick="smoothTo('#form')">Записаться</button>
+      <button class="btn pulse" onclick="smoothTo('#form')">Записаться</button>
     </nav>
   </div>
 </header>
@@ -34,15 +34,15 @@
           <h1 class="hero-title">Развивайте таланты вашего ребёнка в программировании: от новичка до первого проекта</h1>
           <div class="hero-sub">
             <ul>
-              <li>Для подростков 12-17 лет</li>
-              <li>Освойте Unity, Blender, Python, Figma, Photoshop</li>
-              <li>Индивидуальные или групповые занятия</li>
-              <li>Первый проект — за 6-8 недель!</li>
+              <li>Для <span class="highlight">подростков 12-17 лет</span></li>
+              <li>Освойте <span class="highlight">Unity, Blender, Python, Figma, Photoshop</span></li>
+              <li><span class="highlight">Индивидуальные или групповые занятия</span></li>
+              <li><span class="highlight">Первый проект — за 6-8 недель!</span></li>
             </ul>
           </div>
           <div class="hero-cta">
-            <button class="btn pulse large" onclick="smoothTo('#form')">Записаться на занятие</button>
-            <button class="btn ghost" onclick="smoothTo('#steps')">Узнать, как мы работаем</button>
+            <button class="btn pulse medium" onclick="smoothTo('#form')">Записаться на занятие</button>
+            <button class="btn ghost medium" onclick="smoothTo('#steps')">Узнать, как мы работаем</button>
           </div>
           <p class="sub">Более 500 родителей выбрали нас. Старт еженедельно • Без опыта — welcome! • 10 мест на этой неделе!</p>
         </div>
@@ -105,31 +105,31 @@
           <div class="ph">Иконка Unity (размер: 100x100px)</div>
           <h3>Unity: Создание игр</h3>
           <p class="muted">Платформа для игр как Fortnite. Прототип с меню и логикой за 6-8 недель.</p>
-          <div class="actions"><button class="btn ghost large" onclick="smoothTo('#form')">Записаться</button></div>
+          <div class="actions"><button class="btn ghost large pulse" onclick="smoothTo('#form')">Подробнее о курсе</button></div>
         </article>
         <article class="card">
           <div class="ph">Иконка Blender (размер: 100x100px)</div>
           <h3>Blender: 3D-моделирование</h3>
           <p class="muted">Для 3D как в мультфильмах. Моделирование сцены с освещением.</p>
-          <div class="actions"><button class="btn ghost large" onclick="smoothTo('#form')">Записаться</button></div>
+          <div class="actions"><button class="btn ghost large pulse" onclick="smoothTo('#form')">Подробнее о курсе</button></div>
         </article>
         <article class="card">
           <div class="ph">Иконка Python (размер: 100x100px)</div>
           <h3>Python: Программирование</h3>
           <p class="muted">Язык для автоматизации. Мини-приложения, скрипты, Git.</p>
-          <div class="actions"><button class="btn ghost large" onclick="smoothTo('#form')">Записаться</button></div>
+          <div class="actions"><button class="btn ghost large pulse" onclick="smoothTo('#form')">Подробнее о курсе</button></div>
         </article>
         <article class="card">
           <div class="ph">Иконка Figma (размер: 100x100px)</div>
           <h3>Figma: Дизайн интерфейсов</h3>
           <p class="muted">Инструмент для UI. Прототипы сайтов и приложений.</p>
-          <div class="actions"><button class="btn ghost large" onclick="smoothTo('#form')">Записаться</button></div>
+          <div class="actions"><button class="btn ghost large pulse" onclick="smoothTo('#form')">Подробнее о курсе</button></div>
         </article>
         <article class="card">
           <div class="ph">Иконка Photoshop (размер: 100x100px)</div>
           <h3>Photoshop: Графический дизайн</h3>
           <p class="muted">Редактирование фото. Баннеры, иллюстрации.</p>
-          <div class="actions"><button class="btn ghost large" onclick="smoothTo('#form')">Записаться</button></div>
+          <div class="actions"><button class="btn ghost large pulse" onclick="smoothTo('#form')">Подробнее о курсе</button></div>
         </article>
       </div>
     </div>
@@ -145,25 +145,37 @@
           <div class="ph ph-mentor">Фото наставника (размер: 150x150px)</div>
           <h3>Алексей — Unity</h3>
           <p class="muted">«Фокус на практике: от идеи до готовой игры»</p>
-          <div class="actions"><button class="btn ghost large" onclick="smoothTo('#form')">Записаться</button></div>
+          <div class="actions"><button class="btn ghost large pulse mentor-btn">Подробнее</button></div>
+          <div class="mentor-details" style="display:none;">
+            <p>Алексей имеет 5 лет опыта в геймдеве. Специализируется на Unity, помогает развивать креативность через создание игр.</p>
+          </div>
         </article>
         <article class="card">
           <div class="ph ph-mentor">Фото наставника (размер: 150x150px)</div>
           <h3>Мария — Blender</h3>
           <p class="muted">«Творчество в 3D: моделируем мир шаг за шагом»</p>
-          <div class="actions"><button class="btn ghost large" onclick="smoothTo('#form')">Записаться</button></div>
+          <div class="actions"><button class="btn ghost large pulse mentor-btn">Подробнее</button></div>
+          <div class="mentor-details" style="display:none;">
+            <p>Мария - 3D-художник с опытом в анимации. Учит Blender, фокусируясь на творческом подходе для подростков.</p>
+          </div>
         </article>
         <article class="card">
           <div class="ph ph-mentor">Фото наставника (размер: 150x150px)</div>
           <h3>Дмитрий — Python</h3>
           <p class="muted">«Код как инструмент: решаем реальные задачи»</p>
-          <div class="actions"><button class="btn ghost large" onclick="smoothTo('#form')">Записаться</button></div>
+          <div class="actions"><button class="btn ghost large pulse mentor-btn">Подробнее</button></div>
+          <div class="mentor-details" style="display:none;">
+            <p>Дмитрий - разработчик с фокусом на Python. Преподает через решение практических задач, развивая логику.</p>
+          </div>
         </article>
         <article class="card">
           <div class="ph ph-mentor">Фото наставника (размер: 150x150px)</div>
           <h3>Елена — Figma & Photoshop</h3>
           <p class="muted">«Дизайн для будущего: от скетча до прототипа»</p>
-          <div class="actions"><button class="btn ghost large" onclick="smoothTo('#form')">Записаться</button></div>
+          <div class="actions"><button class="btn ghost large pulse mentor-btn">Подробнее</button></div>
+          <div class="mentor-details" style="display:none;">
+            <p>Елена - дизайнер UI/UX. Обучает Figma и Photoshop, помогая создавать профессиональные дизайны.</p>
+          </div>
         </article>
       </div>
     </div>
@@ -246,7 +258,7 @@
           <p class="muted subprice">Абонемент на 4 занятия</p>
           <p class="muted">Разовая: 1500 ₽</p>
           <p class="save">Экономия 20%</p>
-          <div class="actions"><button class="btn large" onclick="smoothTo('#form')">Записаться</button></div>
+          <div class="actions"><button class="btn large pulse" onclick="smoothTo('#form')">Записаться</button></div>
         </div>
         <div class="card">
           <h3>Мини-группы (3-8 учеников)</h3>
@@ -254,13 +266,13 @@
           <p class="muted subprice">Абонемент на 4 занятия</p>
           <p class="muted">Разовая: 1000 ₽</p>
           <p class="save">Экономия 20%</p>
-          <div class="actions"><button class="btn large" onclick="smoothTo('#form')">Записаться</button></div>
+          <div class="actions"><button class="btn large pulse" onclick="smoothTo('#form')">Записаться</button></div>
         </div>
         <div class="card">
           <h3>Гостевой пропуск</h3>
           <div class="price">Бесплатно</div>
           <p class="muted">Открытые часы: знакомство с направлениями.</p>
-          <div class="actions"><button class="btn large" onclick="smoothTo('#form')">Получить</button></div>
+          <div class="actions"><button class="btn large pulse" onclick="smoothTo('#form')">Получить</button></div>
         </div>
       </div>
     </div>
@@ -304,8 +316,8 @@
         <label>Имя*<br><input type="text" placeholder="Имя" required aria-required="true" /></label>
         <label>Email*<br><input type="email" placeholder="Email" required aria-required="true" /></label>
         <label>Телефон*<br><input type="tel" placeholder="Телефон" required aria-required="true" /></label>
-        <label>Цель (игра / 3D-сцена / UI / скрипт)…<br>
-          <textarea placeholder="Опиши цель (необязательно)"></textarea>
+        <label>Что вы хотите для вашего ребёнка? (игра / 3D-сцена / UI / скрипт)…<br>
+          <textarea placeholder="Опишите цели вашего ребёнка (необязательно)"></textarea>
         </label>
         <div class="track-pills" role="group" aria-label="Выберите направления">
           <span class="pill" data-value="Unity">Unity</span>
@@ -318,7 +330,7 @@
         <p class="muted">Можно несколько. Если не уверены — «Не определился».</p>
         <input type="hidden" name="tracks" id="tracksField" value="">
         <label class="checkbox-label"><input type="checkbox" required /> Я согласен с политикой конфиденциальности</label>
-        <button class="btn" style="width:100%">Отправить</button>
+        <button class="btn pulse" style="width:100%">Отправить</button>
         <div id="thanks" class="thanks" hidden>Спасибо! Свяжемся в 24 часа.</div>
       </form>
     </div>
