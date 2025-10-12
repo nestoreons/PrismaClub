@@ -194,6 +194,7 @@ footer .wrap { display: flex; align-items: center; justify-content: space-betwee
   margin-top: 0; /* Убираем отрицательный margin */
   box-shadow: var(--shadow), var(--shadow-glow);
   position: relative;
+  display: flex;
   z-index: 1; /* Оставляем ниже белого блока */
 }
 
