@@ -79,7 +79,7 @@ header {
   align-items: center; 
   gap: 40px;
   position: relative;
-  margin-bottom: -30px; /* Добавляем нахлёст на красный блок */
+  margin-bottom: -20px; /* Добавляем нахлёст на красный блок */
   z-index: 3; /* Поднимаем над красным блоком */
 }
 .hero-card::after {
@@ -188,7 +188,7 @@ footer .wrap { display: flex; align-items: center; justify-content: space-betwee
 .booking-banner {
   background: linear-gradient(135deg, var(--accent) 0%, #ff6b7a 100%);
   color: var(--white);
-  padding: 40px 40px 30px;
+  padding: 80px 40px 30px;
   border-radius: var(--radius-lg);
   text-align: center;
   margin-top: 0; /* Убираем отрицательный margin */
