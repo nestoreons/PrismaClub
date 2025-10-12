@@ -79,7 +79,7 @@ header {
   align-items: center; 
   gap: 40px;
   position: relative;
-  margin-bottom: -20px; /* Добавляем нахлёст на красный блок */
+  margin-bottom: -50px; /* Добавляем нахлёст на красный блок */
   z-index: 3; /* Поднимаем над красным блоком */
 }
 .hero-card::after {
