@@ -203,13 +203,24 @@ footer .wrap { display: flex; align-items: center; justify-content: space-betwee
   line-height: 1.4;
 }
 
+/* Updated Booking Banner Styles */
 .booking-form {
-  display: grid;
-  grid-template-columns: 1fr 1fr auto;
-  gap: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   max-width: 600px;
   margin: 0 auto;
-  align-items: end;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
 }
 
 .booking-form input {
@@ -218,6 +229,7 @@ footer .wrap { display: flex; align-items: center; justify-content: space-betwee
   border: none;
   font-size: 16px;
   background: var(--white);
+  width: 100%;
 }
 
 .booking-form input:focus {
@@ -225,12 +237,55 @@ footer .wrap { display: flex; align-items: center; justify-content: space-betwee
   box-shadow: 0 0 0 3px rgba(255,255,255,0.3);
 }
 
+.track-selection {
+  width: 100%;
+}
+
+.track-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.pill {
+  border: 1.5px solid var(--white);
+  color: var(--white);
+  background: transparent;
+  border-radius: 999px;
+  padding: 10px 16px;
+  cursor: pointer;
+  user-select: none;
+  font-weight: 700;
+  transition: all .15s ease;
+}
+
+.pill:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-soft);
+  background: rgba(255,255,255,0.1);
+}
+
+.pill.active {
+  background: var(--white);
+  color: var(--accent);
+  border-color: transparent;
+  box-shadow: 0 8px 18px rgba(255,255,255,0.3);
+}
+
+.booking-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
 .booking-form .btn {
   background: var(--white);
   color: var(--accent);
   border: none;
   white-space: nowrap;
-  height: fit-content;
+  width: fit-content;
 }
 
 .booking-form .btn:hover {
@@ -242,8 +297,8 @@ footer .wrap { display: flex; align-items: center; justify-content: space-betwee
 .trust-text {
   font-size: 14px;
   opacity: 0.9;
-  margin-top: 12px;
   font-weight: 600;
+  text-align: center;
 }
 
 /* Responsive booking banner */
@@ -253,9 +308,18 @@ footer .wrap { display: flex; align-items: center; justify-content: space-betwee
     margin-top: -15px;
   }
   
-  .booking-form {
+  .form-row {
     grid-template-columns: 1fr;
     gap: 16px;
+  }
+  
+  .track-pills {
+    gap: 6px;
+  }
+  
+  .pill {
+    padding: 8px 12px;
+    font-size: 14px;
   }
 }
 
@@ -267,6 +331,10 @@ footer .wrap { display: flex; align-items: center; justify-content: space-betwee
   
   .booking-banner h3 {
     font-size: 20px;
+  }
+  
+  .track-pills {
+    justify-content: flex-start;
   }
 }
 
