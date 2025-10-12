@@ -188,42 +188,43 @@ footer .wrap { display: flex; align-items: center; justify-content: space-betwee
 .booking-banner {
   background: linear-gradient(135deg, var(--accent) 0%, #ff6b7a 100%);
   color: var(--white);
-  padding: 60px 40px 30px;
+  padding: 70px 40px 40px; /* Увеличил верхний padding из-за нахлёста */
   border-radius: var(--radius-lg);
   text-align: center;
-  margin-top: 0; /* Убираем отрицательный margin */
+  margin-top: 0;
   box-shadow: var(--shadow), var(--shadow-glow);
   position: relative;
-  display: flex;
-  z-index: 1; /* Оставляем ниже белого блока */
+  z-index: 1;
+}
+
+.booking-header {
+  margin-bottom: 25px;
 }
 
 .booking-banner h3 {
-  margin: 0 0 6px; /* Уменьшил отступ */
+  margin: 0 0 8px;
   font-size: 24px;
   font-weight: 800;
   line-height: 1.3;
 }
 
 .booking-banner p {
-  margin: 0 0 18px; /* Уменьшил отступ */
+  margin: 0 0 20px;
   opacity: 0.95;
   font-size: 17px;
   line-height: 1.4;
 }
 
 .booking-form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px; /* Уменьшил расстояние между группами */
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
 .form-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px; /* Уменьшил расстояние между полями */
+  grid-template-columns: 1fr 1fr auto;
+  gap: 15px;
+  align-items: end;
 }
 
 .input-group {
@@ -232,10 +233,10 @@ footer .wrap { display: flex; align-items: center; justify-content: space-betwee
 }
 
 .booking-form input {
-  padding: 12px 14px; /* Уменьшил padding */
+  padding: 14px 16px;
   border-radius: 8px;
   border: none;
-  font-size: 15px; /* Уменьшил размер шрифта */
+  font-size: 15px;
   background: var(--white);
   width: 100%;
 }
@@ -247,12 +248,13 @@ footer .wrap { display: flex; align-items: center; justify-content: space-betwee
 
 .track-selection {
   width: 100%;
+  margin-bottom: 5px;
 }
 
 .track-pills {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px; /* Уменьшил расстояние между кнопками */
+  gap: 8px;
   justify-content: center;
 }
 
@@ -261,11 +263,11 @@ footer .wrap { display: flex; align-items: center; justify-content: space-betwee
   color: var(--white);
   background: transparent;
   border-radius: 999px;
-  padding: 8px 12px; /* Уменьшил размер кнопок */
+  padding: 8px 14px;
   cursor: pointer;
   user-select: none;
   font-weight: 700;
-  font-size: 14px; /* Уменьшил размер шрифта */
+  font-size: 14px;
   transition: all .15s ease;
 }
 
@@ -286,7 +288,7 @@ footer .wrap { display: flex; align-items: center; justify-content: space-betwee
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px; /* Уменьшил расстояние между кнопкой и текстом */
+  gap: 8px;
 }
 
 .booking-form .btn {
@@ -294,9 +296,9 @@ footer .wrap { display: flex; align-items: center; justify-content: space-betwee
   color: var(--accent);
   border: none;
   white-space: nowrap;
-  width: fit-content;
-  padding: 14px 22px; /* Немного уменьшил кнопку */
+  padding: 14px 24px;
   font-size: 16px;
+  min-width: 200px;
 }
 
 .booking-form .btn:hover {
@@ -306,38 +308,46 @@ footer .wrap { display: flex; align-items: center; justify-content: space-betwee
 
 /* Trust text */
 .trust-text {
-  font-size: 13px; /* Уменьшил размер шрифта */
+  font-size: 13px;
   opacity: 0.9;
   font-weight: 600;
   text-align: center;
+  white-space: nowrap;
 }
 
 /* Responsive booking banner */
 @media (max-width: 768px) {
   .booking-banner {
-    padding: 20px 20px 25px;
-    margin-top: -25px;
+    padding: 60px 20px 30px;
   }
   
   .form-row {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 15px;
   }
   
   .track-pills {
-    gap: 5px;
+    gap: 6px;
   }
   
   .pill {
-    padding: 6px 10px;
+    padding: 6px 12px;
     font-size: 13px;
+  }
+  
+  .booking-form .btn {
+    min-width: auto;
+    width: 100%;
+  }
+  
+  .trust-text {
+    white-space: normal;
   }
 }
 
 @media (max-width: 640px) {
   .booking-banner {
-    padding: 18px 16px 22px;
-    margin-top: -20px;
+    padding: 50px 16px 25px;
   }
   
   .booking-banner h3 {
@@ -346,11 +356,6 @@ footer .wrap { display: flex; align-items: center; justify-content: space-betwee
   
   .track-pills {
     justify-content: flex-start;
-  }
-  
-  .booking-form .btn {
-    padding: 12px 20px;
-    font-size: 15px;
   }
 }
 /* Responsive */
