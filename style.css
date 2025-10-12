@@ -70,9 +70,17 @@ header {
 /* Hero */
 .hero { padding: 60px 0 40px; position: relative; }
 .hero-card {
-  background: var(--white); border-radius: var(--radius-lg); padding: 40px; box-shadow: var(--shadow), var(--shadow-glow);
-  display: flex; justify-content: space-between; align-items: center; gap: 40px;
+  background: var(--white); 
+  border-radius: var(--radius-lg); 
+  padding: 40px; 
+  box-shadow: var(--shadow), var(--shadow-glow);
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  gap: 40px;
   position: relative;
+  margin-bottom: -30px; /* Добавляем нахлёст на красный блок */
+  z-index: 2; /* Поднимаем над красным блоком */
 }
 .hero-card::after {
   content: ''; position: absolute; bottom: -50px; right: 50px; width: 100px; height: 100px; background: var(--accent); opacity: 0.2; transform: rotate(45deg); z-index: -1;
@@ -183,10 +191,10 @@ footer .wrap { display: flex; align-items: center; justify-content: space-betwee
   padding: 25px 40px 30px;
   border-radius: var(--radius-lg);
   text-align: center;
-  margin-top: -30px; /* Увеличил нахлёст на белый блок */
+  margin-top: 0; /* Убираем отрицательный margin */
   box-shadow: var(--shadow), var(--shadow-glow);
   position: relative;
-  z-index: 1;
+  z-index: 1; /* Оставляем ниже белого блока */
 }
 
 .booking-banner h3 {
