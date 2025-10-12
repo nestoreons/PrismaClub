@@ -176,6 +176,106 @@ textarea { min-height: 140px; resize: vertical; }
 footer { padding: 40px 0; background: var(--ink); color: var(--white); }
 footer .wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
 
+/* Booking Banner Styles */
+.booking-banner {
+  background: linear-gradient(135deg, var(--accent) 0%, #ff6b7a 100%);
+  color: var(--white);
+  padding: 30px 40px;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  margin-top: 40px;
+  box-shadow: var(--shadow), var(--shadow-glow);
+  position: relative;
+  z-index: 2;
+}
+
+.booking-banner h3 {
+  margin: 0 0 8px;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.booking-banner p {
+  margin: 0 0 24px;
+  opacity: 0.95;
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+.booking-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 12px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.booking-form input {
+  padding: 14px 16px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  background: var(--white);
+}
+
+.booking-form input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255,255,255,0.3);
+}
+
+.booking-form .btn {
+  background: var(--white);
+  color: var(--accent);
+  border: none;
+  white-space: nowrap;
+}
+
+.booking-form .btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(0.98);
+}
+
+/* Hero image improvements */
+.hero-image img {
+  border-radius: 12px;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  box-shadow: var(--shadow-soft);
+}
+
+/* Responsive booking banner */
+@media (max-width: 768px) {
+  .booking-banner {
+    padding: 24px 20px;
+    margin-top: 30px;
+  }
+  
+  .booking-form {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .booking-banner h3 {
+    font-size: 22px;
+  }
+  
+  .booking-banner p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .booking-banner {
+    padding: 20px 16px;
+  }
+  
+  .booking-banner h3 {
+    font-size: 20px;
+  }
+}
+
 /* Responsive */
 @media (max-width: 1180px) {
   .grid-4, .steps { grid-template-columns: repeat(2,1fr); }
