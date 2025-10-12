@@ -27,35 +27,46 @@
 
 <main>
   <!-- HERO -->
-  <section class="hero" id="hero">
-    <div class="wrap">
-      <div class="hero-card">
-        <div class="hero-content">
-          <h1 class="hero-title">Развивайте таланты вашего ребёнка в программировании: от новичка, до первого проекта</h1>
-          <div class="hero-sub">
-            <ul>
-              <li>Для <span class="highlight">подростков 12-17 лет</span></li>
-              <li>Освойте <span class="highlight">Unity, Blender, Python, Figma, Photoshop</span></li>
-              <li><span class="highlight">Индивидуальные или групповые занятия</span></li>
-              <li><span class="highlight">Первый проект — за 6-8 недель!</span></li>
-            </ul>
-          </div>
-          <div class="hero-cta">
-            <button class="btn pulse medium" onclick="smoothTo('#form')">Записаться на занятие</button>
-            <button class="btn ghost medium" onclick="smoothTo('#steps')">Узнать, как мы работаем</button>
-          </div>
-          <p class="sub">*Места ограничены!</p>
+<section class="hero" id="hero">
+  <div class="wrap">
+    <div class="hero-card">
+      <div class="hero-content">
+        <h1 class="hero-title">Развивайте таланты вашего ребёнка в программировании: от новичка, до первого проекта</h1>
+        <div class="hero-sub">
+          <ul>
+            <li>Для <span class="highlight">подростков 12-17 лет</span></li>
+            <li>Освойте <span class="highlight">Unity, Blender, Python, Figma, Photoshop</span></li>
+            <li><span class="highlight">Индивидуальные или групповые занятия</span></li>
+            <li><span class="highlight">Первый проект — за 6-8 недель!</span></li>
+          </ul>
         </div>
-        <div class="hero-image">
-          <div class="ph-hero"><img src="Child.png" alt="Ребёнок создаёт игру в Unity" width="600" height="400"></div>
-          <div class="floating-element floating-circle"></div>
-          <div class="floating-element floating-dot"></div>
-          <div class="floating-element floating-square"></div>
-          <div class="floating-element floating-triangle"></div>
+        <div class="hero-cta">
+          <button class="btn pulse medium" onclick="smoothTo('#form')">Записаться на занятие</button>
+          <button class="btn ghost medium" onclick="smoothTo('#steps')">Узнать, как мы работаем</button>
         </div>
+        <p class="sub">*Места ограничены!</p>
+      </div>
+      <div class="hero-image">
+        <img src="Child.png" alt="Ребёнок создаёт игру в Unity" width="600" height="400">
+        <div class="floating-element floating-circle"></div>
+        <div class="floating-element floating-dot"></div>
+        <div class="floating-element floating-square"></div>
+        <div class="floating-element floating-triangle"></div>
       </div>
     </div>
-  </section>
+    
+    <!-- Booking Banner -->
+    <div class="booking-banner">
+      <h3>Осталось 3 места в группах!</h3>
+      <p>Успейте записаться до конца недели</p>
+      <div class="booking-form">
+        <input type="text" placeholder="Имя ребёнка">
+        <input type="tel" placeholder="Телефон родителя">
+        <button class="btn large">Забронировать место</button>
+      </div>
+    </div>
+  </div>
+</section>
 
   <!-- STEPS -->
   <section id="steps">
