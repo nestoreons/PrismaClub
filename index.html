@@ -41,7 +41,6 @@
           </ul>
         </div>
         <div class="hero-cta">
-          <button class="btn pulse medium" onclick="smoothTo('#form')">Записаться на занятие</button>
           <button class="btn ghost medium" onclick="smoothTo('#steps')">Узнать подробнее</button>
         </div>
         <p class="sub">*Места ограничены!</p>
@@ -59,10 +58,29 @@
     <div class="booking-banner">
       <h3>Осталось 3 места в группах!</h3>
       <p>Успейте записаться до конца недели</p>
-      <div class="booking-form">
-        <input type="text" placeholder="Имя ребёнка">
-        <input type="tel" placeholder="Телефон родителя">
-        <button class="btn large">Забронировать место</button>
+      
+      <div class="booking-form-compact">
+        <div class="form-row">
+          <div>
+            <input type="text" class="form-input" placeholder="Как к вам обращаться?">
+          </div>
+          <div>
+            <input type="tel" class="form-input" placeholder="Ваш телефон">
+          </div>
+        </div>
+        
+        <div class="form-compact-pills">
+          <span class="compact-pill">Unity</span>
+          <span class="compact-pill">Python</span>
+          <span class="compact-pill">Blender</span>
+          <span class="compact-pill">Figma</span>
+          <span class="compact-pill">Photoshop</span>
+          <span class="compact-pill">Не определился</span>
+        </div>
+        
+        <p class="form-note">Можно выбрать несколько направлений</p>
+        
+        <button class="btn large" style="width: 100%;">Забронировать консультацию</button>
       </div>
     </div>
   </div>
