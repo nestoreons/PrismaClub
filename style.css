@@ -185,6 +185,7 @@ footer { padding: 40px 0; background: var(--ink); color: var(--white); }
 footer .wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
 
 /* Updated Booking Banner Styles */
+/* Updated Booking Banner Styles */
 .booking-banner {
   background: linear-gradient(135deg, var(--accent) 0%, #ff6b7a 100%);
   color: var(--white);
@@ -200,13 +201,17 @@ footer .wrap { display: flex; align-items: center; justify-content: space-betwee
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 25px;
+  margin-bottom: 12px;
   gap: 30px;
 }
 
 .booking-text {
   flex: 1;
   display: flex;
+}
+
+.booking-text p {
+  white-space: nowrap;
 }
 
 .booking-banner h3 {
@@ -252,6 +257,14 @@ footer .wrap { display: flex; align-items: center; justify-content: space-betwee
   background: var(--white);
   color: var(--accent);
   border-color: transparent;
+}
+
+.small-text {
+  font-size: 14px;
+  opacity: 0.95;
+  color: var(--white);
+  margin: 0 0 8px 0;
+  width: 100%;
 }
 
 .booking-bottom-row {
