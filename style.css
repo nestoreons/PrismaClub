@@ -207,7 +207,7 @@ footer .wrap { display: flex; align-items: center; justify-content: space-betwee
 .booking-text {
   flex: 1;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
 }
 
